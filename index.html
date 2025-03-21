@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA Walking Tours - Home</title>
+    <link rel="stylesheet" href="./css/style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <header>
+   <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
+      <nav>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+            <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/tourPage.html">Tours</a></li>
+          <li><a href="/stories.html">Stories</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome to LA Walking Tours</h2>
+      <p>
+        We bring our enthusiasm to entertain you with the history, architecture,
+        and culture of our beautiful city, Los Angeles!
+      </p>
+    </section>
+
+    <section class="tours">
+   <div class="card-div">
+  <div class="card-1">
+    <img src="./Images/vc_spotlight_griffithpark_hero_rf_815660072_1280x640.jpg"  alt="image1"/>
+  </div>
+  <div class="card-2">
+    <img src="./Images/pexels-wolfram-k-745236.jpg"  alt="image1"/>
+  </div>
+</div>
+<div class="tour-text">
+  <div>
+    <h3 >Public Tour</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+
+  <div>
+    <h3>Private Tour</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+    </section>
+
+    <section class="hero">
+      <h2>Learn more about the history of LA</h2>
+      <p style="margin-bottom: 30px">
+        We bring our enthusiasm to entertain you with the history, architecture,
+        and culture of our beautiful city, Los Angeles!
+      </p>
+      <a href="#" class="btn">Learn More</a>
+    </section>
+
+   <section class="favorites">
+  <h2>Our Favorites</h2>
+  <div class="main-fav">
+    <div class="sub-main-fav">
+      <div class="fav-card">  <img src="./Images/pexels-erica-zhao-2670273.jpg"  alt="image1"/></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+    </div>
+    <div class="sub-main-fav">
+      <div class="fav-card">  <img src="./Images/pexels-paul-deetman-2695679.jpg"  alt="image1"/></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+    </div>
+    <div class="sub-main-fav">
+      <div class="fav-card">  <img src="./Images/pexels-vincent-gerbouin-2263683.jpg"  alt="image1"/></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+    </div>
+  </div>
+</section>
+  <footer>
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        
+   <li><a href="/index.html">Home</a></li>
+   <li><a href="/about.html">About Us</a></li>
+            <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/tourPage.html">Tours</a></li>
+          <li><a href="/stories.html">Stories</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>123 Main Street, Orange City, USA</p>
+      <p>Email: hennab@gmail.com</p>
+      <p>Phone: +123 456 7890</p>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-section">
+    <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+
+  <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
+        if (scrollPosition > 100) {
+          header.classList.add("glassy");
+        } else {
+          header.classList.remove("glassy");
+        }
+      });
+    </script>
+ 
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA Walking Tours - Home</title>
+    <link rel="stylesheet" href="./css/style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <header>
+       <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
+      <nav>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+             <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/tourPage.html">Tours</a></li>
+          <li><a href="/stories.html">Stories</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>About Us</h1>
+        <p>
+          LA Walking Tours was formed in 2009 with the goal of engaging those
+          with a hunger for learning about Los Angeles. The tours aim to inform
+          our guests of the history of LA's vibrant neighborhoods, immerse them
+          in the current developments of the city, and prepare them for the
+          exciting future ahead. Tours are tailored for tourists enjoying a
+          brief stay and the seasoned local alike, providing an educational and
+          captivating glimpse into our dynamic city. Each guest comes away
+          learning something new and fascinating about the City of Angels!
+        </p>
+      </div>
+    </section>
+    <section class="team-section">
+      <h2 class="team-heading">Our Team</h2>
+      <div class="team-container">
+        <div class="team-wrapper">
+          <h3 class="team-name">AJ</h3>
+          <div class="team-card">
+            <img src="https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 1" />
+          </div>
+          <p class="team-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <div class="team-wrapper">
+          <h3 class="team-name">Phil</h3>
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 2" />
+          </div>
+          <p class="team-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <div class="team-wrapper">
+          <h3 class="team-name">Tom</h3>
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3" />
+          </div>
+          <p class="team-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="love-section">
+      <div class="love-card">
+        <h2 class="love-heading">People Love Us!</h2>
+        <p class="love-text">
+          As you peer up at the many murals coloring the former warehouses that
+          make up the district’s industrial landscape, Robert shares stories
+          about the neighborhood’s artists, building, and history.
+        </p>
+        <p class="love-quote">~ Beyond the Acorn</p>
+      </div>
+    </section>
+      <footer>
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        
+   <li><a href="/index.html">Home</a></li>
+   <li><a href="/about.html">About Us</a></li>
+            <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/tourPage.html">Tours</a></li>
+          <li><a href="/stories.html">Stories</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>123 Main Street, Orange City, USA</p>
+      <p>Email: hennab@gmail.com</p>
+      <p>Phone: +123 456 7890</p>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-section">
+      <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+      <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
+        if (scrollPosition > 100) {
+          header.classList.add("glassy");
+        } else {
+          header.classList.remove("glassy");
+        }
+      });
+    </script>
+  </body>
+</html>
