@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LA Walking Tours - Home</title>
+    <title>Chinatown & Little Tokyo Tour - LA Walking Tours</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+   
   </head>
   <body>
-    <header>
+     <header>
       <a href="./index.html">
         <img src="./Images/LA_walking.png" alt="logo"
       /></a>
@@ -31,81 +29,72 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <h2>Welcome to LA Walking Tours</h2>
+ <section class="tour-details">
+  <h1>Chinatown & Little Tokyo Tour</h1>
+  <div class="tour-card">
+    <div class="tour-image-container">
+      <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Chinatown-Plaza-1_li117_1.jpg" alt="Chinatown & Little Tokyo Tour" class="tour-image" />
+    </div>
+    <div class="tour-text">
       <p>
-        We bring our enthusiasm to entertain you with the history, architecture,
-        and culture of our beautiful city, Los Angeles!
+        Walk into the two largest ethnic neighborhoods of Downtown and learn about their growth and history in Los Angeles. Understand how international issues, such as nationalism, World War II, and segregation affected the Chinese and Japanese cultures, but have allowed each to retain their strong community neighborhoods.
       </p>
-    </section>
+    </div>
+  </div>
 
-    <section class="tours">
-      <div class="card-div">
-        <div class="card-1">
-          <img
-            src="./Images/vc_spotlight_griffithpark_hero_rf_815660072_1280x640.jpg"
-            alt="image1"
-          />
-        </div>
-        <div class="card-2">
-          <img src="./Images/pexels-wolfram-k-745236.jpg" alt="image1" />
-        </div>
+  <!-- Full-width content below the card -->
+  <div class="full-width-content">
+    <!-- Two-column layout for Upcoming Dates and Booking Information -->
+    <div class="two-column-layout">
+      <div class="column">
+        <h2>Upcoming Dates</h2>
+        <ul>
+          <li>10:30 AM - Friday, April 4th</li>
+          <li>10:30 AM - Saturday, April 5th</li>
+          <li>10:30 AM - Friday, April 11th</li>
+        </ul>
       </div>
-      <div class="tour-text">
-        <div>
-          <h3>Public Tour</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-
-        <div>
-          <h3>Private Tour</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
+      <div class="column">
+        <h2>Booking Information</h2>
+        <p>
+          All tours require advanced ticket purchases. Please use the "Purchase Tickets" option below when making your booking. Service fees are applied at the time of checkout.
+        </p>
       </div>
-    </section>
+    </div>
 
-    <section class="hero">
-      <h2>Learn more about the history of LA</h2>
-      <p style="margin-bottom: 30px">
-        We bring our enthusiasm to entertain you with the history, architecture,
-        and culture of our beautiful city, Los Angeles!
-      </p>
-      <a href="#" class="btn">Learn More</a>
-    </section>
+    <!-- Ticket Pricing and Private Events -->
+    <h2>Ticket Pricing</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ticket Type</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Adult (ages 13 and up)</td>
+          <td>$30</td>
+        </tr>
+        <tr>
+          <td>Child (ages 5 - 12)</td>
+          <td>$20</td>
+        </tr>
+        <tr>
+          <td>Toddler (ages 4 and under)</td>
+          <td>Free</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <section class="favorites">
-      <h2>Our Favorites</h2>
-      <div class="main-fav">
-        <div class="sub-main-fav">
-          <div class="fav-card">
-            <img src="./Images/pexels-erica-zhao-2670273.jpg" alt="image1" />
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-        </div>
-        <div class="sub-main-fav">
-          <div class="fav-card">
-            <img src="./Images/pexels-paul-deetman-2695679.jpg" alt="image1" />
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-        </div>
-        <div class="sub-main-fav">
-          <div class="fav-card">
-            <img
-              src="./Images/pexels-vincent-gerbouin-2263683.jpg"
-              alt="image1"
-            />
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-        </div>
-      </div>
-    </section>
-    <footer>
+    <h2>Private Events</h2>
+    <p>
+      Would you like us to host this as a private event? If so, <a href="/#" style="color: blue;">Contact Us</a> for availability and a quote.
+    </p>
+  </div>
+</section>
+
+       <footer>
       <!-- Quick Links -->
       <div class="footer-section">
         <h3>Quick Links</h3>
@@ -162,7 +151,8 @@
       </div>
     </footer>
 
-    <script>
+
+     <script>
       // Toggle Navbar on Hamburger Click
       const hamburger = document.querySelector(".hamburger");
       const navbar = document.querySelector(".navbar");

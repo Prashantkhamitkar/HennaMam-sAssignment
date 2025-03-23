@@ -8,12 +8,20 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
- <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
-      <nav>
+     <header>
+      <a href="./index.html">
+        <img src="./Images/LA_walking.png" alt="logo"
+      /></a>
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <nav class="navbar">
         <ul>
           <li><a href="/about.html">About Us</a></li>
-            <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/calendar.html">Calendar</a></li>
           <li><a href="/tourPage.html">Tours</a></li>
           <li><a href="/stories.html">Stories</a></li>
         </ul>
@@ -125,10 +133,21 @@
       <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
   </footer>
-  <script>
+   <script>
+      // Toggle Navbar on Hamburger Click
+      const hamburger = document.querySelector(".hamburger");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Add Glassy Effect on Scroll
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
 
         // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
         if (scrollPosition > 100) {

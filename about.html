@@ -9,11 +9,19 @@
   </head>
   <body>
     <header>
-       <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
-      <nav>
+      <a href="./index.html">
+        <img src="./Images/LA_walking.png" alt="logo"
+      /></a>
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <nav class="navbar">
         <ul>
           <li><a href="/about.html">About Us</a></li>
-             <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/calendar.html">Calendar</a></li>
           <li><a href="/tourPage.html">Tours</a></li>
           <li><a href="/stories.html">Stories</a></li>
         </ul>
@@ -59,7 +67,7 @@
         <div class="team-wrapper">
           <h3 class="team-name">Tom</h3>
           <div class="team-card">
-            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3" />
+            <img src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3" />
           </div>
           <p class="team-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -127,9 +135,20 @@
     </div>
   </footer>
       <script>
+      // Toggle Navbar on Hamburger Click
+      const hamburger = document.querySelector(".hamburger");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Add Glassy Effect on Scroll
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
 
         // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
         if (scrollPosition > 100) {

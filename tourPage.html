@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LA Walking Tours - Home</title>
+    <title>LA Walking Tours - Tours</title>
     <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body>
-    <header>
-   <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
-      <nav>
+     <header>
+      <a href="./index.html">
+        <img src="./Images/LA_walking.png" alt="logo"
+      /></a>
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <nav class="navbar">
         <ul>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/calendar.html">Calendar</a></li>
@@ -20,7 +28,8 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <!-- Public Tours Section -->
+    <section class="hero" style="margin-top: 0;">
       <h2>Public Tours</h2>
       <p>
         We bring our enthusiasm to entertain you with the history, architecture,
@@ -30,98 +39,111 @@
 
     <section class="pricing">
       <div class="pricing-container">
-        <!-- Card 1 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$99</div>
-             <img src="./Images/pexels-erica-zhao-2670273.jpg"  alt="image1"/>
+        <!-- Public Tour 1 -->
+        <a href="downtownarchitecture.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$30</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Eastern-Columbia_li453_1.jpg" alt="Public Tour 1" />
+            </div>
+            <p class="card-text">
+              Explore the heart of Los Angeles with our Downtown LA Tour.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
 
-        <!-- Card 2 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$149</div>
-              <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
+        <!-- Public Tour 2 -->
+        <a href="chinatowndetails.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$149</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Chinatown-Plaza_li613_1.jpg" alt="Public Tour 2" />
+            </div>
+            <p class="card-text">
+              Discover the glamour and history of Chinatown.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
 
-        <!-- Card 3 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$199</div>
-              <img src="https://images.unsplash.com/photo-1437253101411-a2fd9a03c4ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
+        <!-- Public Tour 3 -->
+        <a href="first_la_theatre.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$199</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-First-LA-Theatre-by-Sid-Grauman_li605_3.jpg" alt="Public Tour 3" />
+            </div>
+            <p class="card-text">
+              Experience the vibrant culture of Venice Beach.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
 
-        <!-- Card 4 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$249</div>
-   <img src="https://images.unsplash.com/photo-1679056251616-b9fc63dae5ce?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
+        <!-- Public Tour 4 -->
+        <a href="clifton.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$249</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-Clifton-s-Cafeteria_li437_5.jpg" alt="Public Tour 4" />
+            </div>
+            <p class="card-text">
+             Experience the history of Los Angeles.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
 
-        <!-- Card 5 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$299</div>
-               <img src="https://images.unsplash.com/photo-1663791490075-397e012f9e15?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
-          </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+      
+      </div>
+    </section>
 
-        <!-- Card 6 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$349</div>
-               <img src="https://plus.unsplash.com/premium_photo-1671809692422-4893b9e09119?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
-          </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+    <!-- Private Tours Section -->
+    <section class="hero" style="margin-top: 0;">
+      <h2>Private Tours</h2>
+      <p>
+        Enjoy a personalized experience with our private tours, tailored to your interests and schedule.
+      </p>
+    </section>
 
-        <!-- Card 7 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$399</div>
-               <img src="https://images.unsplash.com/photo-1714707839215-23b307338d1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
+    <section class="pricing">
+      <div class="pricing-container">
+        <!-- Private Tour 1 -->
+        <a href="bullocks.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$499</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Wilshire-Colonnade_dh14_4.jpg" alt="Private Tour 1" />
+            </div>
+            <p class="card-text">
+           Wilshire Center & Koreatown Tour.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
 
-        <!-- Card 8 -->
-        <div class="card-wrapper">
-          <div class="pricing-card">
-            <div class="price-tag">$449</div>
-               <img src="https://images.unsplash.com/photo-1605200723310-5df264c13e22?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
+        <!-- Private Tour 2 -->
+        <a href="buddhist.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$549</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Koyasan-Buddhist-Temple_dh156_2.jpg" alt="Private Tour 2" />
+            </div>
+            <p class="card-text">
+              A private tour of Hollywood.
+            </p>
           </div>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
+        </a>
+
+        <!-- Private Tour 3 -->
+        <a href="friendshipknot.html" class="card-link">
+          <div class="card-wrapper">
+            <div class="pricing-card">
+              <div class="price-tag">$599</div>
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Friendship-Knot_dh157_3.jpg" alt="Private Tour 3" />
+            </div>
+            <p class="card-text">
+              Friendship Knot.
+            </p>
+          </div>
+        </a>
+
       </div>
     </section>
       <footer>
@@ -172,10 +194,21 @@
       <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
   </footer>
-      <script>
+   <script>
+      // Toggle Navbar on Hamburger Click
+      const hamburger = document.querySelector(".hamburger");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Add Glassy Effect on Scroll
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
 
         // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
         if (scrollPosition > 100) {

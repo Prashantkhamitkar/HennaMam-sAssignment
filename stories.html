@@ -4,13 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LA Walking Tours - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Custom CSS for Carousel -->
+    <style>
+      /* Make the carousel responsive */
+      .carousel-item {
+        height: 60vh; /* Use viewport height for responsiveness */
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the container */
+      }
+
+      /* Style for carousel captions */
+      .carousel-caption {
+        background: transparent; /* Semi-transparent background for better readability */
+        padding: 20px;
+        border-radius: 10px;
+        bottom: 50%; /* Center the caption vertically */
+        left: 50%; /* Center the caption horizontally */
+        transform: translate(-50%, 50%); /* Center the caption */
+        width: 90%; /* Set a max width for the caption */
+        max-width: 800px; /* Limit the maximum width */
+        text-align: center; /* Center the text */
+      }
+
+      /* Adjust the heading and paragraph styles */
+      .carousel-caption h2 {
+        font-size: 2.5rem; /* Larger font size for the heading */
+        margin-bottom: 1rem;
+        color: azure; /* Add spacing below the heading */
+      }
+
+      .carousel-caption p {
+        font-size: 1.2rem; /* Slightly larger font size for the paragraph */
+        margin-bottom: 0; /* Remove default margin */
+      }
+
+      /* Responsive adjustments for smaller screens */
+      @media (max-width: 768px) {
+        .carousel-caption {
+          bottom: 40%; /* Adjust vertical position for smaller screens */
+          width: 100%; /* Full width on smaller screens */
+          padding: 10px; /* Reduce padding */
+        }
+
+        .carousel-caption h2 {
+          font-size: 2rem; /* Smaller font size for smaller screens */
+        }
+
+        .carousel-caption p {
+          font-size: 1rem; /* Smaller font size for smaller screens */
+        }
+      }
+
+    </style>
   </head>
   <body>
      <header>
-  <a href="./index.html"> <img src="./Images/LA_walking.png" alt="logo"/></a>
-      <nav>
+      <a href="./index.html">
+        <img src="./Images/LA_walking.png" alt="logo"
+      /></a>
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <nav class="navbar">
         <ul>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/calendar.html">Calendar</a></li>
@@ -20,148 +86,254 @@
       </nav>
     </header>
 
-    <section class="hero" style="padding-bottom: 4rem; padding-top: 4rem;">
-      <h2 style="margin-top: 3rem;">Stories</h2>
-      <p>
-      We bring our enthusiasm to entertain you with the 
-history, architecture, and culture of our beautiful city, 
-Los Angeles!
-      </p>
-    </section>
-<section class="team-stories">
- 
-  <!-- First Row -->
-  <div class="team-stories-row ">
-    <!-- Card 1 -->
-    <div class="team-stories-member">
-      <div class="member-name">John Parkinson</div>
-      <div class="team-stories-card">
-   <img src="https://images.unsplash.com/photo-1679056251616-b9fc63dae5ce?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-     
+    <!-- Bootstrap Carousel Section -->
+    <section class="carousel-section">
+      <div id="storiesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#storiesCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
 
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-    <!-- Card 2 -->
-    <div class="team-stories-member">
-      <div class="member-name">Union Station</div>
-      <div class="team-stories-card">
- <img src="https://images.unsplash.com/photo-1541328519168-a91fdd710096?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-   
-
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-    <!-- Card 3 -->
-    <div class="team-stories-member">
-      <div class="member-name">Venice</div>
-      <div class="team-stories-card">
-         <img src="https://images.unsplash.com/photo-1536585806558-81c7ea4d393d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-   
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-  </div>
-
-  <!-- Second Row -->
-  <div class="team-stories-row ">
-    <!-- Card 4 -->
-    <div class="team-stories-member">
-      <div class="member-name">Abbot Kinney</div>
-      <div class="team-stories-card">
-  <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-   
-  
-
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-    <!-- Card 5 -->
-    <div class="team-stories-member">
-      <div class="member-name">Altadena</div>
-      <div class="team-stories-card">
-          <img src="https://images.unsplash.com/photo-1517984617863-c6bd4eead73d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-   
-  
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-    <!-- Card 6 -->
-    <div class="team-stories-member">
-      <div class="member-name">Piers</div>
-      <div class="team-stories-card">
-          <img src="https://images.unsplash.com/photo-1528100237940-58ba9eab0fbc?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="image1"/>
-   
-  
-      </div>
-      <p class="member-description">Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit, sed do</p>
-    </div>
-  </div>
-
-  <!-- See More Section -->
-  <div class="see-more">
-    <span>See more</span>
-    <span class="arrow-down">&#9660;</span> <!-- Down arrow symbol -->
-  </div>
-</section>
-  <footer>
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <!-- Item 1 -->
+          <div class="carousel-item active">
+         
+              <img
+                src="https://images.unsplash.com/photo-1461696114087-397271a7aedc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="d-block w-100"
+                alt="John Parkinson"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Stories</h2>
+                <p>
+                  We bring our enthusiasm to entertain you with the history, architecture, and culture of our beautiful
+                  city, Los Angeles!
+                </p>
+              </div>
         
-   <li><a href="/index.html">Home</a></li>
-   <li><a href="/about.html">About Us</a></li>
-            <li><a href="/calendar.html">Calendar</a></li>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="carousel-item">
+          
+              <img
+                src="https://images.unsplash.com/photo-1477346611705-65d1883cee1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="d-block w-100"
+                alt="Union Station"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Stories</h2>
+                <p>
+                  We bring our enthusiasm to entertain you with the history, architecture, and culture of our beautiful
+                  city, Los Angeles!
+                </p>
+              </div>
+          
+          </div>
+
+          <!-- Item 3 -->
+          <div class="carousel-item">
+           
+              <img
+                src="https://images.unsplash.com/photo-1536585806558-81c7ea4d393d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="d-block w-100"
+                alt="Venice"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Stories</h2>
+                <p>
+                  We bring our enthusiasm to entertain you with the history, architecture, and culture of our beautiful
+                  city, Los Angeles!
+                </p>
+              </div>
+        
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Team Stories Section -->
+    <section class="team-stories">
+      <div class="team-stories-row">
+        <div class="team-stories-member">
+          <a href="olympics.html">
+            <div class="member-name">The Los Angeles Olympics</div>
+            <div class="team-stories-card">
+              <img
+                src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-1932-Olympics-Promotion-credited_sd94_5.png"
+                alt="John Parkinson"
+              />
+            </div>
+            <p class="member-description">Discover the legacy of the 1932 and 1984 Los Angeles Olympics, which transformed the city into a global sports hub.</p>
+          </a>
+        </div>
+
+        <div class="team-stories-member">
+          <a href="railstation.html">
+            <div class="member-name">The Last Great Rail Station</div>
+            <div class="team-stories-card">
+              <img
+                src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-union-cap_sd77_1.png"
+                alt="Union Station"
+              />
+            </div>
+            <p class="member-description">Explore the history of Union Station, the last of the great rail stations built in the United States.</p>
+          </a>
+        </div>
+
+        <div class="team-stories-member">
+          <a href="venice.html">
+            <div class="member-name">Venice</div>
+            <div class="team-stories-card">
+              <img
+                src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-cap_sd76_5.png"
+                alt="Venice"
+              />
+            </div>
+            <p class="member-description">Step into the vibrant history of Venice, California, inspired by the canals of Italy and built by Abbot Kinney.</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-stories-row">
+        <div class="team-stories-member">
+          <a href="historyaltadena.html">
+            <div class="member-name">History Of Altadena</div>
+            <div class="team-stories-card">
+              <img
+                src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Historic-Altadena_sd65_3.png"
+                alt="Abbot Kinney"
+              />
+            </div>
+            <p class="member-description">Learn about the rich history of Altadena, from its origins as part of Rancho San Pascual to its development into a thriving community.</p>
+          </a>
+        </div>
+
+        <div class="team-stories-member">
+          <a href="hollywoodhistory.html">
+            <div class="member-name">History Of Hollywood</div>
+            <div class="team-stories-card">
+              <img
+                src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywood-sign-cover-st4-1_sd11_1.png"
+                alt="Altadena"
+              />
+            </div>
+            <p class="member-description">Dive into the glamorous and fascinating history of Hollywood, the entertainment capital of the world.</p>
+          </a>
+        </div>
+
+        <div class="team-stories-member">
+          <a href="grandpark.html">
+            <div class="member-name">Grand Park</div>
+            <div class="team-stories-card">
+              <img
+                src="https://images.unsplash.com/photo-1528100237940-58ba9eab0fbc?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Piers"
+              />
+            </div>
+            <p class="member-description">Discover the transformation of Grand Park, a vibrant civic space in the heart of Downtown Los Angeles.</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="see-more">
+        <span>See more</span>
+        <span class="arrow-down">&#9660;</span>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/calendar.html">Calendar</a></li>
           <li><a href="/tourPage.html">Tours</a></li>
           <li><a href="/stories.html">Stories</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Information -->
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p>123 Main Street, Orange City, USA</p>
-      <p>Email: hennab@gmail.com</p>
-      <p>Phone: +123 456 7890</p>
-    </div>
-
-    <!-- Newsletter Subscription -->
-    <div class="footer-section">
-      <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-
-    <!-- Social Media Icons -->
-    <div class="footer-section">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </ul>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </footer>
-   <script>
+      <!-- Contact Information -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Main Street, Orange City, USA</p>
+        <p>Email: hennab@gmail.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+
+      <!-- Newsletter Subscription -->
+      <div class="footer-section">
+        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
+          <a href="#">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Script -->
+     <script>
+      // Toggle Navbar on Hamburger Click
+      const hamburger = document.querySelector(".hamburger");
+      const navbar = document.querySelector(".navbar");
+
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Add Glassy Effect on Scroll
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
 
         // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
         if (scrollPosition > 100) {
