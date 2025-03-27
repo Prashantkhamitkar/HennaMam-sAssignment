@@ -4,212 +4,395 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Union Station - LA Walking Tours</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #1a4b8c; /* Deep blue background */
+        color: #e0e0e0; /* Light gray text for readability */
+        font-family: 'Quattrocento', serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6,
+      .navbar-brand,
+      .hero-section h1,
+      .hero-section .lead,
+      .card-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .navbar {
+        background-color: rgba(26, 75, 140, 0.9) !important;
+        backdrop-filter: blur(10px);
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-glass {
+        background-color: rgba(10, 40, 90, 0.85) !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #1a4b8c 0%, #0d2b5a 100%);
+        border-bottom: 3px solid #4a90e2;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.5rem;
+      }
+      
+      .content-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .img-border {
+        border: 3px solid #4a90e2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      .author-card {
+        background-color: rgba(10, 40, 90, 0.7);
+        border-left: 5px solid #4a90e2;
+      }
+      
+      .related-card {
+        background-color: rgba(26, 75, 140, 0.7);
+        transition: transform 0.3s ease;
+      }
+      
+      .related-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(26, 75, 140, 0.9);
+      }
+      
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .footer {
+        background: linear-gradient(135deg, #0d2b5a 0%, #081f3d 100%);
+      }
+      
+      .footer h5 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+      }
+      
+      .footer-link {
+        color: #a0c4ff !important;
+      }
+      
+      .footer-link:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+      
+      .story-meta {
+        color: #a0c4ff;
+        font-style: italic;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white py-5 mb-5">
+      <div class="container py-5 mt-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold">Union Station</h1>
+            <p class="lead mb-0">America's "Last of the Great Rail Stations"</p>
+            <p class="story-meta">By: Angela D. | Date: April 24, 2021</p>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="story-details">
-      <h1>Union Station</h1>
-      <p class="story-meta">By: Angela D. | Date: April 24, 2021</p>
-
-      <!-- Row 1: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-union-cap_sd77_1.png" alt="Union Station" />
+    <!-- Main Content -->
+    <main class="container mb-5">
+      <!-- Row 1 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-union-cap_sd77_1.png" alt="Union Station" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
-          <p>
-            Welcome to a story about Los Angeles’ Union Station, known as America’s “Last of the Great Rail Stations!” Have you visited this iconic building? If not, or if it’s been a while, hopefully this story will inspire you to visit soon.
+        <div class="col-lg-6 content-card p-4">
+          <p class="lead">
+            Welcome to a story about Los Angeles' Union Station, known as America's "Last of the Great Rail Stations!" Have you visited this iconic building? If not, or if it's been a while, hopefully this story will inspire you to visit soon.
           </p>
           <p>
-            So, how did Union Station come to be? First, let’s examine the stations that preceded it. The first railroad to come to Southern California was the Los Angeles and San Pedro Railroad in 1869. Although this was primarily used to transport freight from the San Pedro ports into the city, it assisted in Los Angeles’ rapid growth from that point on. Not too much later, transcontinental passenger rail started entering the city with Southern Pacific Railroad in 1876, Santa Fe Railroad in 1887, and the Salt Lake Railroad (later called Union Pacific) in 1905. Each of these connected LA to various other parts of the country. In 1900 LA’s population passed 100,000, and by the 1920’s it was approaching one million – Los Angeles was booming!
+            So, how did Union Station come to be? First, let's examine the stations that preceded it. The first railroad to come to Southern California was the Los Angeles and San Pedro Railroad in 1869. Although this was primarily used to transport freight from the San Pedro ports into the city, it assisted in Los Angeles' rapid growth from that point on. Not too much later, transcontinental passenger rail started entering the city with Southern Pacific Railroad in 1876, Santa Fe Railroad in 1887, and the Salt Lake Railroad (later called Union Pacific) in 1905. Each of these connected LA to various other parts of the country. In 1900 LA's population passed 100,000, and by the 1920's it was approaching one million – Los Angeles was booming!
           </p>
         </div>
       </div>
 
-      <!-- Row 2: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 2 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-union-cap_sd78_2.png" alt="Commercial Street Depot" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
-            Several stations served the city before Union Station’s opening in 1939. First was Commercial Street Depot, located at the corner of Commercial and Alameda Streets. It opened in 1869 and mostly served shipments of freight for the Los Angeles and San Pedro Railroad.
-          </p>
-        </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-union-cap_sd78_2.png" alt="Commercial Street Depot" />
-        </div>
-      </div>
-
-      <!-- Row 3: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-union-cap_sd79_3.png" alt="River Station" />
-        </div>
-        <div class="story-text">
-          <p>
-            By 1876 it was replaced by River Station, where today’s LA State Historic Park in Chinatown is located. The Southern Pacific Railroad operated from this station and was the first to connect LA to the United States via trains coming in from San Francisco.
+            Several stations served the city before Union Station's opening in 1939. First was Commercial Street Depot, located at the corner of Commercial and Alameda Streets. It opened in 1869 and mostly served shipments of freight for the Los Angeles and San Pedro Railroad.
           </p>
         </div>
       </div>
 
-      <!-- Row 4: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 3 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-union-cap_sd79_3.png" alt="River Station" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p>
+            By 1876 it was replaced by River Station, where today's LA State Historic Park in Chinatown is located. The Southern Pacific Railroad operated from this station and was the first to connect LA to the United States via trains coming in from San Francisco.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-union-cap_sd80_4.png" alt="Arcade Station" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
             By 1888, River Station was replaced by the Arcade Station, which was located off Alameda Street between 5th and 6th Streets, and which became the new home for Southern Pacific. A fun fact about this station is that the oldest fan palm tree in Los Angeles was transplanted there from its original wild home in 1899! Situated in front of the train station, it greeted visitors and new settlers and confirmed expectations of Los Angeles as a magical land of sunshine.
           </p>
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-union-cap_sd80_4.png" alt="Arcade Station" />
-        </div>
       </div>
 
-      <!-- Row 5: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-union-cap_sd81_5.png" alt="Central Station" />
+      <!-- Row 5 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-union-cap_sd81_5.png" alt="Central Station" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
             When the Arcade Station was replaced by Central Station in 1914, the tree was eventually moved to Exposition Park where it still stands today – now over 170 years old! (You can learn more about the history of palm trees in Los Angeles here) Central Station continued to serve Southern Pacific, but Union Pacific also began using this station when their previous depot (located on the east side of the LA River on 1st street) caught on fire in 1924.
           </p>
         </div>
       </div>
 
-      <!-- Row 6: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 6 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/6-union-cap_sd82_6.png" alt="La Grande Station" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
-            When the Santa Fe Railroad entered Los Angeles, the trains initially went to River Station, then Arcade Station and finally transferred to Santa Fe’s own La Grande Station at 2nd Street and Santa Fe Street. La Grande Station operated between 1893 and 1939, but Union Station’s opening resulted in the consolidation of Santa Fe, Union Pacific, and Southern Pacific services into one central terminal. La Grande Station was demolished in 1946 and Central Station in 1956.
-          </p>
-        </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/6-union-cap_sd82_6.png" alt="La Grande Station" />
-        </div>
-      </div>
-
-      <!-- Row 7: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/7-LA-s-Rail-Stations_sd83_7.png" alt="LA's Rail Stations" />
-        </div>
-        <div class="story-text">
-          <p>
-            Two proposals were made in the 1920s: build a network of elevated rail lines that would connect the various terminals or build a new central station. The rail companies did not like the idea of a central station, however, the city officials were not keen on elevated railways. This conversation started in 1916 and was finally put to a vote in 1926. The people of LA went to the polls to make their choice, and the Union Station concept won (61% to 39%). The location of the station was a separate ballot measure, and the Alameda Street site was chosen (more narrowly 51% to 49%). The Alameda Street location was close to the original founding site of the city, which was the center of Chinatown in the 1920s. (You can read more about LA’s Chinatowns here)
+            When the Santa Fe Railroad entered Los Angeles, the trains initially went to River Station, then Arcade Station and finally transferred to Santa Fe's own La Grande Station at 2nd Street and Santa Fe Street. La Grande Station operated between 1893 and 1939, but Union Station's opening resulted in the consolidation of Santa Fe, Union Pacific, and Southern Pacific services into one central terminal. La Grande Station was demolished in 1946 and Central Station in 1956.
           </p>
         </div>
       </div>
 
-      <!-- Row 8: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 7 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/7-LA-s-Rail-Stations_sd83_7.png" alt="LA's Rail Stations" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p>
+            Two proposals were made in the 1920s: build a network of elevated rail lines that would connect the various terminals or build a new central station. The rail companies did not like the idea of a central station, however, the city officials were not keen on elevated railways. This conversation started in 1916 and was finally put to a vote in 1926. The people of LA went to the polls to make their choice, and the Union Station concept won (61% to 39%). The location of the station was a separate ballot measure, and the Alameda Street site was chosen (more narrowly 51% to 49%). The Alameda Street location was close to the original founding site of the city, which was the center of Chinatown in the 1920s. (You can read more about LA's Chinatowns here)
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 8 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/8-union-cap_sd84_8.png" alt="Union Station Grand Opening" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
             The decision to build Union Station was to help consolidate services into a central terminal while also making the city safer. The city streets had become perilous and crowded, with the rail lines running full size trains alongside regional trolley cars, pedestrians, horses and horse-drawn carts, and eventually automobiles!
           </p>
           <p>
-            Construction on the station began in 1933 and was completed in 1939 at the cost of $11 million (about $209 million in 2021). Architects John and Donald Parkinson (father and son) were chosen to design the station. John Parkinson was also the architect for the Central Station in 1914 as well as City Hall in 1928, so he was well known and an obvious choice to design this new station. For Union Station, the father and son team chose a blend of Spanish Colonial, Mission Revival and Art Deco styles, referencing both California’s past as well as excitement for the future. It is truly a beautiful architectural wonder to behold!
+            Construction on the station began in 1933 and was completed in 1939 at the cost of $11 million (about $209 million in 2021). Architects John and Donald Parkinson (father and son) were chosen to design the station. John Parkinson was also the architect for the Central Station in 1914 as well as City Hall in 1928, so he was well known and an obvious choice to design this new station. For Union Station, the father and son team chose a blend of Spanish Colonial, Mission Revival and Art Deco styles, referencing both California's past as well as excitement for the future. It is truly a beautiful architectural wonder to behold!
           </p>
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/8-union-cap_sd84_8.png" alt="Union Station Grand Opening" />
+      </div>
+
+      <!-- Author Card -->
+      <div class="card mb-5 author-card text-white border-0 shadow">
+        <div class="row g-0">
+          <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-user-circle fa-5x text-light"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">About the Author</h5>
+              <p class="card-text">Angela D. is a transportation historian specializing in Los Angeles rail history and urban development. She has written extensively about the impact of rail transportation on the city's growth.</p>
+              <p class="card-text"><small class="text-light">Last updated April 2021</small></p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Row 9: Image on the left, text on the right -->
-     
-    </section>
-
-    <footer>
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>123 Main Street, Orange City, USA</p>
-        <p>Email: hennab@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Subscription -->
-      <div class="footer-section">
-        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <!-- Related Stories -->
+      <div class="mb-5">
+        <h3 class="mb-4 pb-2 border-bottom border-light">Related Stories</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" class="card-img-top" alt="Related story 1">
+              <div class="card-body">
+                <h5 class="card-title">LA's Historic Rail Stations</h5>
+                <p class="card-text">Explore the architectural gems that preceded Union Station.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" class="card-img-top" alt="Related story 2">
+              <div class="card-body">
+                <h5 class="card-title">The Parkinson Architects</h5>
+                <p class="card-text">The father-son team that shaped Los Angeles' iconic buildings.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" class="card-img-top" alt="Related story 3">
+              <div class="card-body">
+                <h5 class="card-title">Chinatown's Evolution</h5>
+                <p class="card-text">How Union Station's location affected LA's Chinatown.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </main>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
-        </p>
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
-     <script>
-      // Toggle Navbar on Hamburger Click
-      const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('navbar-glass');
         } else {
-          header.classList.remove("glassy");
+          navbar.classList.remove('navbar-glass');
         }
       });
     </script>

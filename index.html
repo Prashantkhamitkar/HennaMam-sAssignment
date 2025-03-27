@@ -1,189 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LA Walking Tours - Home</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-blue: #1a4b8c;
+            --dark-blue: #0d2b5a;
+            --accent-blue: #4a90e2;
+            --gold: #FFD700;
+        }
+        
+        body {
+            font-family: 'Quattrocento', serif;
+            color: #333;
+            background-color: #f8f9fa;
+            padding-top: 70px; /* For fixed navbar */
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(26, 75, 140, 0.9) !important;
+            backdrop-filter: blur(10px);
+            font-family: 'Oswald', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-glass {
+            background-color: rgba(10, 40, 90, 0.85) !important;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 43, 90, 0.8), rgba(13, 43, 90, 0.8)), 
+                        url('https://images.unsplash.com/photo-1485872299829-c673f5194813?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Tours Section */
+        .tours {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .card-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .card-1, .card-2 {
+            flex: 1 1 500px;
+            max-width: 550px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card-1:hover, .card-2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-1 img, .card-2 img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .tour-text {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tour-text div {
+            flex: 1 1 500px;
+            max-width: 550px;
+            text-align: center;
+        }
+        
+        .tour-text h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        /* Favorites Section */
+        .favorites {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .favorites h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+        }
+        
+        .main-fav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .sub-main-fav {
+            flex: 1 1 350px;
+            max-width: 350px;
+            text-align: center;
+        }
+        
+        .fav-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .fav-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .fav-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        /* Testimonials Carousel */
+        .testimonials-carousel {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .carousel-item {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .carousel-item p {
+            font-size: 1.2rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .carousel-item .author {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #081f3d 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-section {
+            margin-bottom: 30px;
+        }
+        
+        .footer h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: #a0c4ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .card-1, .card-2 {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            
+            .tour-text div {
+                flex: 1 1 100%;
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .sub-main-fav {
+                flex: 1 1 100%;
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <section class="hero">
+            <h2>Welcome to LA Walking Tours</h2>
+            <p>
+              We bring our enthusiasm to entertain you with the history, architecture,
+              and culture of our beautiful city, Los Angeles!
+            </p>
+          </section>
+        </div>
+        <div class="carousel-item">
+          <section class="hero" style="background-image: linear-gradient(rgba(13, 43, 90, 0.8), rgba(13, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1515895309288-a3815ab7cf81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <h2>Discover Hidden Gems</h2>
+            <p>
+              Explore the lesser-known treasures of Los Angeles with our expert guides.
+            </p>
+          </section>
+        </div>
+        <div class="carousel-item">
+          <section class="hero" style="background-image: linear-gradient(rgba(13, 43, 90, 0.8), rgba(13, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <h2>Experience LA Like Never Before</h2>
+            <p>
+              Join our unique walking tours and see the city from a local's perspective.
+            </p>
+          </section>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
-    </header>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-    <section class="hero">
-      <h2>Welcome to LA Walking Tours</h2>
-      <p>
-        We bring our enthusiasm to entertain you with the history, architecture,
-        and culture of our beautiful city, Los Angeles!
-      </p>
-    </section>
-
+    <!-- Tours Section -->
     <section class="tours">
       <div class="card-div">
         <div class="card-1">
-          <img
-            src="./Images/vc_spotlight_griffithpark_hero_rf_815660072_1280x640.jpg"
-            alt="image1"
-          />
+          <img src="./Images/vc_spotlight_griffithpark_hero_rf_815660072_1280x640.jpg" alt="Griffith Park">
         </div>
         <div class="card-2">
-          <img src="./Images/pexels-wolfram-k-745236.jpg" alt="image1" />
+          <img src="./Images/pexels-wolfram-k-745236.jpg" alt="Downtown LA">
         </div>
       </div>
       <div class="tour-text">
         <div>
           <h3>Public Tour</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Join our group tours to explore LA's most famous landmarks with fellow travelers. Our expert guides will share fascinating stories about the city's history and architecture.
           </p>
+          <a href="/tourPage.html" class="btn">Book Now</a>
         </div>
-
         <div>
           <h3>Private Tour</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Customize your own LA experience with a private tour tailored to your interests. Perfect for families, corporate groups, or anyone wanting a personalized experience.
           </p>
+          <a href="/tourPage.html" class="btn">Book Now</a>
         </div>
       </div>
     </section>
 
-    <section class="hero">
+    <!-- History Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(13, 43, 90, 0.8), rgba(13, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
       <h2>Learn more about the history of LA</h2>
       <p style="margin-bottom: 30px">
-        We bring our enthusiasm to entertain you with the history, architecture,
-        and culture of our beautiful city, Los Angeles!
+        Discover the rich cultural heritage and architectural marvels that make Los Angeles one of the world's most fascinating cities.
       </p>
-      <a href="#" class="btn">Learn More</a>
+      <a href="/stories.html" class="btn">Learn More</a>
     </section>
 
+    <!-- Favorites Section -->
     <section class="favorites">
       <h2>Our Favorites</h2>
       <div class="main-fav">
         <div class="sub-main-fav">
           <div class="fav-card">
-            <img src="./Images/pexels-erica-zhao-2670273.jpg" alt="image1" />
+            <img src="./Images/pexels-erica-zhao-2670273.jpg" alt="Hollywood Walk of Fame">
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+          <p>Explore the iconic Hollywood Walk of Fame and learn about the entertainment industry's history.</p>
         </div>
         <div class="sub-main-fav">
           <div class="fav-card">
-            <img src="./Images/pexels-paul-deetman-2695679.jpg" alt="image1" />
+            <img src="./Images/pexels-paul-deetman-2695679.jpg" alt="Downtown Architecture">
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+          <p>Discover the stunning Art Deco and Modernist architecture of Downtown Los Angeles.</p>
         </div>
         <div class="sub-main-fav">
           <div class="fav-card">
-            <img
-              src="./Images/pexels-vincent-gerbouin-2263683.jpg"
-              alt="image1"
-            />
+            <img src="./Images/pexels-vincent-gerbouin-2263683.jpg" alt="Venice Beach">
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+          <p>Experience the vibrant culture and street performers of Venice Beach and its famous boardwalk.</p>
         </div>
       </div>
     </section>
-    <footer>
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </div>
 
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>123 Main Street, Orange City, USA</p>
-        <p>Email: hennab@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Subscription -->
-      <div class="footer-section">
-        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="#" aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Testimonials Carousel -->
+    <section class="testimonials-carousel">
+      <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p>"The Downtown Architecture tour was absolutely fascinating! Our guide was incredibly knowledgeable and brought the history of LA to life."</p>
+            <div class="author">- Sarah J.</div>
+          </div>
+          <div class="carousel-item">
+            <p>"I've lived in LA for years but learned so much on the Chinatown & Little Tokyo tour. Highly recommend for locals and visitors alike!"</p>
+            <div class="author">- Michael T.</div>
+          </div>
+          <div class="carousel-item">
+            <p>"The private tour of Koreatown was the highlight of our trip. Customized to our interests and full of amazing food recommendations."</p>
+            <div class="author">- The Chen Family</div>
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+    </section>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
-        </p>
+    <!-- Footer -->
+   <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form class="newsletter-form">
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-      // Toggle Navbar on Hamburger Click
-      const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-glass');
         } else {
-          header.classList.remove("glassy");
+          navbar.classList.remove('navbar-glass');
         }
+      });
+      
+      // Initialize carousels with autoplay
+      const heroCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
+        interval: 5000, // Change slide every 5 seconds
+        pause: 'hover', // Pause on hover
+        wrap: true // Continue looping
+      });
+      
+      const testimonialsCarousel = new bootstrap.Carousel(document.getElementById('testimonialsCarousel'), {
+        interval: 6000, // Change slide every 6 seconds
+        pause: 'hover', // Pause on hover
+        wrap: true // Continue looping
       });
     </script>
   </body>

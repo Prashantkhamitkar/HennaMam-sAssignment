@@ -4,188 +4,378 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hollywood Sign History - LA Walking Tours</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #1a4b8c; /* Deep blue background */
+        color: #e0e0e0; /* Light gray text for readability */
+        font-family: 'Quattrocento', serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6,
+      .navbar-brand,
+      .hero-section h1,
+      .hero-section .lead,
+      .card-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .navbar {
+        background-color: rgba(26, 75, 140, 0.9) !important;
+        backdrop-filter: blur(10px);
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-glass {
+        background-color: rgba(10, 40, 90, 0.85) !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #1a4b8c 0%, #0d2b5a 100%);
+        border-bottom: 3px solid #4a90e2;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.5rem;
+      }
+      
+      .content-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .img-border {
+        border: 3px solid #4a90e2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      .author-card {
+        background-color: rgba(10, 40, 90, 0.7);
+        border-left: 5px solid #4a90e2;
+      }
+      
+      .related-card {
+        background-color: rgba(26, 75, 140, 0.7);
+        transition: transform 0.3s ease;
+      }
+      
+      .related-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(26, 75, 140, 0.9);
+      }
+      
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .footer {
+        background: linear-gradient(135deg, #0d2b5a 0%, #081f3d 100%);
+      }
+      
+      .footer h5 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+      }
+      
+      .footer-link {
+        color: #a0c4ff !important;
+      }
+      
+      .footer-link:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+      
+      .story-meta {
+        color: #a0c4ff;
+        font-style: italic;
+      }
+      
+      .cta-highlight {
+        font-weight: bold;
+        color: #4a90e2;
+        font-size: 1.1rem;
+      }
+    </style>
   </head>
   <body>
-   <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white py-5 mb-5">
+      <div class="container py-5 mt-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold">The Hollywood Sign</h1>
+            <p class="lead mb-0">A Symbol of Dreams and Change</p>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="story-details">
-      <h1>The Hollywood Sign: A Symbol of Dreams and Change</h1>
-    
-
-      <!-- Row 1: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-2_sd14_2.png" alt="Original Hollywoodland Sign" />
+    <!-- Main Content -->
+    <main class="container mb-5">
+      <!-- Row 1 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-2_sd14_2.png" alt="Original Hollywoodland Sign" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
-            The iconic sign that graces Mount Lee’s hillside is an image recognized around the world--a welcome to the city of dreams: HOLLYWOOD. It’s a sight that has greeted and inspired billions since its erection in 1923 by Los Angeles’s own Harry Chandler of LA Times publishing fame. However, the original letters that dazzled Hollywood residents in the 20’s bore a peculiar addition that few modern-day onlookers know about: four extra letters that spelled out “LAND”.
+            The iconic sign that graces Mount Lee's hillside is an image recognized around the world--a welcome to the city of dreams: HOLLYWOOD. It's a sight that has greeted and inspired billions since its erection in 1923 by Los Angeles's own Harry Chandler of LA Times publishing fame. However, the original letters that dazzled Hollywood residents in the 20's bore a peculiar addition that few modern-day onlookers know about: four extra letters that spelled out "LAND".
           </p>
           <p>
-            That’s right: the Hollywood sign was not intended to celebrate the city at all, but rather to advertise Harry Chandler’s burgeoning luxury property development named “Hollywoodland.” It wasn’t until 1949 that the Hollywood Chamber of Commerce erected a new sign in larger, more sturdy letters and snipped off “LAND” to create the sign we know and love today.
+            That's right: the Hollywood sign was not intended to celebrate the city at all, but rather to advertise Harry Chandler's burgeoning luxury property development named "Hollywoodland." It wasn't until 1949 that the Hollywood Chamber of Commerce erected a new sign in larger, more sturdy letters and snipped off "LAND" to create the sign we know and love today.
           </p>
         </div>
       </div>
 
-      <!-- Row 2: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
-          <p>
-            Beyond this unfamiliar beginning, though, the Hollywood sign has seen numerous alterations throughout its time, becoming a canvas for messages of social change, celebration, and playful pranks alike. The first of these modifications occurred on New Year’s Day of 1976 when an art student from California State University Northridge, Daniel Finegood, marched himself up the slope to Mount Lee with $50 worth of curtains he’d purchased for the deed and hung them artfully upon the sign’s double O’s, transforming “HOLLYWOOD” into “HOLLYWeeD.” The transformation’s use was two-fold: it acted as Finegood’s submission for a school project for which he was instructed to “work with scale” (purportedly, he earned an “A”), and it served as a celebration of marijuana possession becoming decriminalized, a change that went into effect that very day.
-          </p>
+      <!-- Row 2 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-3_sd15_3.png" alt="Hollyweed Sign" class="img-fluid rounded img-border">
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-3_sd15_3.png" alt="Hollyweed Sign" />
-        </div>
-      </div>
-
-      <!-- Row 3: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-4_sd16_4.png" alt="Caltech Prank" />
-        </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
-            In 1983, an unknown number of students from Caltech University made the climb and modified the sign to read “CALTECH”--a loud declaration of pride for their Alma Mater.
-          </p>
-          <p>
-            The sign’s next makeover came in 1987 when nine anonymous individuals concocted a plan in anticipation of Pope John Paul II’s visit to Los Angeles. No ordinary welcome was fit for the Pope, so our pranksters altered the sign to read “HOLYWOOD” in an extravagant greeting. Although the nine perpetrators’ intentions are not known for certain, their handiwork was removed all the same before his Holiness ever laid eyes on it.
+            Beyond this unfamiliar beginning, though, the Hollywood sign has seen numerous alterations throughout its time, becoming a canvas for messages of social change, celebration, and playful pranks alike. The first of these modifications occurred on New Year's Day of 1976 when an art student from California State University Northridge, Daniel Finegood, marched himself up the slope to Mount Lee with $50 worth of curtains he'd purchased for the deed and hung them artfully upon the sign's double O's, transforming "HOLLYWOOD" into "HOLLYWeeD." The transformation's use was two-fold: it acted as Finegood's submission for a school project for which he was instructed to "work with scale" (purportedly, he earned an "A"), and it served as a celebration of marijuana possession becoming decriminalized, a change that went into effect that very day.
           </p>
         </div>
       </div>
 
-      <!-- Row 4: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 3 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-4_sd16_4.png" alt="Caltech Prank" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
-            After seeing these playful alterations, though, people came to recognize the sign as a vessel for sending exigent political messages, and it was used as such for the first time in 1990 when ten individuals from the group Artists for Social Responsibility altered the sign to read “OIL WAR” in protest of the Gulf War (the controversy-ridden conflict that involved 35 nations and preceded Operation Desert Storm). The sign was swiftly restored after the change was made, but not without having left a potent statement in the minds of all who saw it. The next episode of sign alteration followed suit with this political trend, reading “PEROTWOOD” to show support for the 1992 presidential candidate Ross Perot. Eight years later in 2010 another political statement, “SAVE THE PEAK”, took over the sign, this time protesting the development of luxury housing on an unowned peak just west of Mount Lee.
-          </p>
-        </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-5_sd17_5.png" alt="Oil War Protest" />
-        </div>
-      </div>
-
-      <!-- Row 5: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-6_sd18_6.png" alt="Save the Peak Protest" />
-        </div>
-        <div class="story-text">
-          <p>
-            Most recently, on January 1st, 2017, “HOLLYWeeD” returned. The state of California’s late 2016 decision to recreationally legalize adult use of marijuana prompted this final alteration, done by an anonymous individual who completed the escapade by cover of night.
+            In 1983, an unknown number of students from Caltech University made the climb and modified the sign to read "CALTECH"--a loud declaration of pride for their Alma Mater.
           </p>
           <p>
-            Since this last incident, the sign’s security has been revamped and improved in hopes of deterring future alterations, complete with surveillance cameras, fences, and security lights. Does this mean we’ve seen the last of the Hollywood sign’s transformations? It’s hard to say. One thing is for sure, though: no force in the world can thwart an Angeleno with a point to make or a story to tell.
+            The sign's next makeover came in 1987 when nine anonymous individuals concocted a plan in anticipation of Pope John Paul II's visit to Los Angeles. No ordinary welcome was fit for the Pope, so our pranksters altered the sign to read "HOLYWOOD" in an extravagant greeting. Although the nine perpetrators' intentions are not known for certain, their handiwork was removed all the same before his Holiness ever laid eyes on it.
           </p>
         </div>
       </div>
 
-      <!-- Row 6: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 4 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-5_sd17_5.png" alt="Oil War Protest" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
+            After seeing these playful alterations, though, people came to recognize the sign as a vessel for sending exigent political messages, and it was used as such for the first time in 1990 when ten individuals from the group Artists for Social Responsibility altered the sign to read "OIL WAR" in protest of the Gulf War (the controversy-ridden conflict that involved 35 nations and preceded Operation Desert Storm). The sign was swiftly restored after the change was made, but not without having left a potent statement in the minds of all who saw it. The next episode of sign alteration followed suit with this political trend, reading "PEROTWOOD" to show support for the 1992 presidential candidate Ross Perot. Eight years later in 2010 another political statement, "SAVE THE PEAK", took over the sign, this time protesting the development of luxury housing on an unowned peak just west of Mount Lee.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-6_sd18_6.png" alt="Save the Peak Protest" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p>
+            Most recently, on January 1st, 2017, "HOLLYWeeD" returned. The state of California's late 2016 decision to recreationally legalize adult use of marijuana prompted this final alteration, done by an anonymous individual who completed the escapade by cover of night.
+          </p>
+          <p>
+            Since this last incident, the sign's security has been revamped and improved in hopes of deterring future alterations, complete with surveillance cameras, fences, and security lights. Does this mean we've seen the last of the Hollywood sign's transformations? It's hard to say. One thing is for sure, though: no force in the world can thwart an Angeleno with a point to make or a story to tell.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-7_sd19_7.png" alt="Hollywood Sign Today" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p class="cta-highlight">
             Join our Hollywood History tour to see the actual sign, as in HOLLYWOOD!
           </p>
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Hollywhat-7_sd19_7.png" alt="Hollywood Sign Today" />
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
       </div>
 
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>123 Main Street, Orange City, USA</p>
-        <p>Email: hennab@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Subscription -->
-      <div class="footer-section">
-        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <!-- Author Card -->
+      <div class="card mb-5 author-card text-white border-0 shadow">
+        <div class="row g-0">
+          <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-user-circle fa-5x text-light"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">About the Author</h5>
+              <p class="card-text">Our Hollywood historians have been documenting the sign's fascinating transformations for decades, preserving these stories of cultural significance.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
-        </p>
+      <!-- Related Stories -->
+      <div class="mb-5">
+        <h3 class="mb-4 pb-2 border-bottom border-light">Related Stories</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" class="card-img-top" alt="Related story 1">
+              <div class="card-body">
+                <h5 class="card-title">Hollywood's Golden Age</h5>
+                <p class="card-text">The rise of the movie industry that made the sign famous.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" class="card-img-top" alt="Related story 2">
+              <div class="card-body">
+                <h5 class="card-title">LA's Iconic Landmarks</h5>
+                <p class="card-text">Other symbols that define the City of Angels.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" class="card-img-top" alt="Related story 3">
+              <div class="card-body">
+                <h5 class="card-title">Famous LA Pranks</h5>
+                <p class="card-text">Other humorous stunts that made LA history.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-      // Toggle Navbar on Hamburger Click
-      const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('navbar-glass');
         } else {
-          header.classList.remove("glassy");
+          navbar.classList.remove('navbar-glass');
         }
       });
     </script>

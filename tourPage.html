@@ -3,219 +3,517 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LA Walking Tours - Tours</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>LA Walking Tours - Explore Our Tours</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-blue: #1a4b8c;
+        --dark-blue: #0d2b5a;
+        --accent-blue: #4a90e2;
+      }
+      
+      body {
+        background-color:#0f3063;
+        color: #333;
+        font-family: 'Quattrocento', serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6,
+      .navbar-brand,
+      .hero h2,
+      .card-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .navbar {
+        background-color: rgba(26, 75, 140, 0.9) !important;
+        backdrop-filter: blur(10px);
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-glass {
+        background-color: rgba(10, 40, 90, 0.85) !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      
+      .pricing-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+        margin-bottom: 3rem;
+      }
+      
+      .card-link {
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+      }
+      
+      .card-link:hover {
+        transform: translateY(-5px);
+        text-decoration: none;
+      }
+      
+      .pricing-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .pricing-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .pricing-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .pricing-card:hover img {
+        transform: scale(1.05);
+      }
+      
+      .price-tag {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--accent-blue);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: bold;
+        font-family: 'Oswald', sans-serif;
+        z-index: 2;
+      }
+      
+      .card-text {
+        padding: 1.5rem;
+        background: white;
+        margin-top: -5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        min-height: 100px;
+      }
+      
+      .card-text p {
+        margin-bottom: 0;
+      }
+      
+      /* Carousel Styles */
+      .carousel-item {
+        height: 500px;
+      }
+      
+      .carousel-item img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+      
+      .carousel-caption {
+       
+        padding: 20px;
+        border-radius: 10px;
+        bottom: 40px;
+      }
+      
+      .carousel-control-prev, .carousel-control-next {
+        width: 5%;
+      }
+      
+      /* Fade effect for carousel */
+      .carousel-fade .carousel-item {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .carousel-fade .carousel-item.active {
+        opacity: 1;
+      }
+      
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, var(--dark-blue) 0%, #081f3d 100%);
+        color: white;
+        padding: 3rem 0 1rem;
+      }
+      
+      .footer h3, .footer h5 {
+        font-family: 'Oswald', sans-serif;
+        color: white;
+      }
+      
+      .footer-link {
+        color: #a0c4ff !important;
+      }
+      
+      .footer-link:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+      
+      .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        color: var(--accent-blue);
+      }
+      
+      .newsletter-form input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+      
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      
+      @media (max-width: 768px) {
+        .carousel-item {
+          height: 350px;
+        }
+        
+        .pricing-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-     <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="tourCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1685345405911-d4dc0b963a8f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Downtown LA">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Discover Los Angeles</h3>
+            <p>Explore the rich history and culture of our beautiful city</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1597085014861-e0548f953955?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Chinatown">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Cultural Experiences</h3>
+            <p>Immerse yourself in LA's diverse neighborhoods</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1685345413939-452cc5c633a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Koreatown">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Private Tours Available</h3>
+            <p>Customized experiences for your group</p>
+          </div>
+        </div>
+         <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1685345414422-74d065a8ffdd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Koreatown">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Public Tours Available</h3>
+            <p>Customized experiences for your group</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#tourCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
-    </header>
+      <button class="carousel-control-next" type="button" data-bs-target="#tourCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
     <!-- Public Tours Section -->
-    <section class="hero" style="margin-top: 0;">
-      <h2>Public Tours</h2>
-      <p>
-        We bring our enthusiasm to entertain you with the history, architecture,
-        and culture of our beautiful city, Los Angeles!
-      </p>
+    <section class="hero">
+      <div class="container">
+        <h2>Public Tours</h2>
+        <p class="lead">
+          We bring our enthusiasm to entertain you with the history, architecture,
+          and culture of our beautiful city, Los Angeles!
+        </p>
+      </div>
     </section>
 
-    <section class="pricing">
-      <div class="pricing-container">
+    <section class="container mb-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         <!-- Public Tour 1 -->
-        <a href="downtownarchitecture.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$30</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Eastern-Columbia_li453_1.jpg" alt="Public Tour 1" />
+        <div class="col">
+          <a href="downtownarchitecture.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Eastern-Columbia_li453_1.jpg" class="card-img-top" alt="Downtown LA">
+                <div class="price-tag">$30</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Downtown LA Tour</h5>
+                <p class="card-text">Explore the heart of Los Angeles with our Downtown LA Tour.</p>
+              </div>
             </div>
-            <p class="card-text">
-              Explore the heart of Los Angeles with our Downtown LA Tour.
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Public Tour 2 -->
-        <a href="chinatowndetails.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$149</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Chinatown-Plaza_li613_1.jpg" alt="Public Tour 2" />
+        <div class="col">
+          <a href="chinatowndetails.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-Chinatown-Plaza_li613_1.jpg" class="card-img-top" alt="Chinatown">
+                <div class="price-tag">$149</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Chinatown Tour</h5>
+                <p class="card-text">Discover the glamour and history of Chinatown.</p>
+              </div>
             </div>
-            <p class="card-text">
-              Discover the glamour and history of Chinatown.
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Public Tour 3 -->
-        <a href="first_la_theatre.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$199</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-First-LA-Theatre-by-Sid-Grauman_li605_3.jpg" alt="Public Tour 3" />
+        <div class="col">
+          <a href="first_la_theatre.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-First-LA-Theatre-by-Sid-Grauman_li605_3.jpg" class="card-img-top" alt="Venice Beach">
+                <div class="price-tag">$199</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Venice Beach Tour</h5>
+                <p class="card-text">Experience the vibrant culture of Venice Beach.</p>
+              </div>
             </div>
-            <p class="card-text">
-              Experience the vibrant culture of Venice Beach.
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Public Tour 4 -->
-        <a href="clifton.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$249</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-Clifton-s-Cafeteria_li437_5.jpg" alt="Public Tour 4" />
+        <div class="col">
+          <a href="clifton.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-Clifton-s-Cafeteria_li437_5.jpg" class="card-img-top" alt="LA History">
+                <div class="price-tag">$249</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">LA History Tour</h5>
+                <p class="card-text">Experience the history of Los Angeles.</p>
+              </div>
             </div>
-            <p class="card-text">
-             Experience the history of Los Angeles.
-            </p>
-          </div>
-        </a>
-
-      
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Private Tours Section -->
-    <section class="hero" style="margin-top: 0;">
-      <h2>Private Tours</h2>
-      <p>
-        Enjoy a personalized experience with our private tours, tailored to your interests and schedule.
-      </p>
+    <section class="hero">
+      <div class="container">
+        <h2>Private Tours</h2>
+        <p class="lead">
+          Enjoy a personalized experience with our private tours, tailored to your interests and schedule.
+        </p>
+      </div>
     </section>
 
-    <section class="pricing">
-      <div class="pricing-container">
+    <section class="container mb-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Private Tour 1 -->
-        <a href="bullocks.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$499</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Wilshire-Colonnade_dh14_4.jpg" alt="Private Tour 1" />
+        <div class="col">
+          <a href="bullocks.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Wilshire-Colonnade_dh14_4.jpg" class="card-img-top" alt="Koreatown">
+                <div class="price-tag">$499</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Koreatown Tour</h5>
+                <p class="card-text">Wilshire Center & Koreatown Tour.</p>
+              </div>
             </div>
-            <p class="card-text">
-           Wilshire Center & Koreatown Tour.
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Private Tour 2 -->
-        <a href="buddhist.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$549</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Koyasan-Buddhist-Temple_dh156_2.jpg" alt="Private Tour 2" />
+        <div class="col">
+          <a href="buddhist.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Koyasan-Buddhist-Temple_dh156_2.jpg" class="card-img-top" alt="Hollywood">
+                <div class="price-tag">$549</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Hollywood Tour</h5>
+                <p class="card-text">A private tour of Hollywood.</p>
+              </div>
             </div>
-            <p class="card-text">
-              A private tour of Hollywood.
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Private Tour 3 -->
-        <a href="friendshipknot.html" class="card-link">
-          <div class="card-wrapper">
-            <div class="pricing-card">
-              <div class="price-tag">$599</div>
-              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Friendship-Knot_dh157_3.jpg" alt="Private Tour 3" />
+        <div class="col">
+          <a href="friendshipknot.html" class="card-link">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="position-relative overflow-hidden">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Friendship-Knot_dh157_3.jpg" class="card-img-top" alt="Friendship Knot">
+                <div class="price-tag">$599</div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Friendship Knot Tour</h5>
+                <p class="card-text">Friendship Knot.</p>
+              </div>
             </div>
-            <p class="card-text">
-              Friendship Knot.
-            </p>
-          </div>
-        </a>
-
+          </a>
+        </div>
       </div>
     </section>
-      <footer>
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        
-   <li><a href="/index.html">Home</a></li>
-   <li><a href="/about.html">About Us</a></li>
-            <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-      </ul>
-    </div>
 
-    <!-- Contact Information -->
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p>123 Main Street, Orange City, USA</p>
-      <p>Email: hennab@gmail.com</p>
-      <p>Phone: +123 456 7890</p>
-    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
 
-    <!-- Newsletter Subscription -->
-    <div class="footer-section">
-     <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
 
-    <!-- Social Media Icons -->
-    <div class="footer-section">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form class="newsletter-form">
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </footer>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>&copy; 2025  All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </footer>
-   <script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Initialize carousel with autoplay and fade effect
+      const myCarousel = new bootstrap.Carousel(document.getElementById('tourCarousel'), {
+        interval: 5000, // Change slide every 5 seconds
+        pause: false, // Don't pause on hover
+        wrap: true // Continue looping
+      });
+      
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('navbar-glass');
+        } else {
+          navbar.classList.remove('navbar-glass');
+        }
+      });
+      
       // Toggle Navbar on Hamburger Click
       const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
+      const navbar = document.querySelector(".navbar-collapse");
+      
       hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
         hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
-        } else {
-          header.classList.remove("glassy");
-        }
+        navbar.classList.toggle("show");
       });
     </script>
   </body>

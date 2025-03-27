@@ -1179,7 +1179,7 @@ footer {
 
 .newsletter-form button {
   padding: 10px 20px;
-  background: #3498db;
+  background: #3498db !important;
   color: #fff;
   border: none;
   border-radius: 5px;

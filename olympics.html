@@ -4,182 +4,366 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1932 Olympics - LA Walking Tours</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #1a4b8c; /* Deep blue background */
+        color: #e0e0e0; /* Light gray text for readability */
+        font-family: 'Quattrocento', serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6,
+      .navbar-brand,
+      .hero-section h1,
+      .hero-section .lead,
+      .card-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .navbar {
+        background-color: rgba(26, 75, 140, 0.9) !important;
+        backdrop-filter: blur(10px);
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-glass {
+        background-color: rgba(10, 40, 90, 0.85) !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #1a4b8c 0%, #0d2b5a 100%);
+        border-bottom: 3px solid #4a90e2;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.5rem;
+      }
+      
+      .content-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .img-border {
+        border: 3px solid #4a90e2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      .author-card {
+        background-color: rgba(10, 40, 90, 0.7);
+        border-left: 5px solid #4a90e2;
+      }
+      
+      .related-card {
+        background-color: rgba(26, 75, 140, 0.7);
+        transition: transform 0.3s ease;
+      }
+      
+      .related-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(26, 75, 140, 0.9);
+      }
+      
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .footer {
+        background: linear-gradient(135deg, #0d2b5a 0%, #081f3d 100%);
+      }
+      
+      .footer h5 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+      }
+      
+      .footer-link {
+        color: #a0c4ff !important;
+      }
+      
+      .footer-link:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-     <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white py-5 mb-5">
+      <div class="container py-5 mt-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold">1932 Olympics</h1>
+            <p class="lead mb-0">The story of Los Angeles' first Olympic Games</p>
+            <p class="text-light">By: Chris F. | Date: March 31, 2023</p>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="story-details">
-      <h1>1932 Olympics</h1>
-      <p class="story-meta">By: Chris F. | Date: March 31, 2023</p>
-
-      <!-- Row 1: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" alt="1932 Opening Ceremonies" />
+    <!-- Main Content -->
+    <main class="container mb-5">
+      <!-- Row 1 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" alt="1932 Opening Ceremonies" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
-          <p>
-            The 2028 Summer Olympics will mark the third time that Los Angeles will play host to the Olympic Games, thereby making us the third city in the world to host three Olympic Games (after London and Paris)! LA’s previous times hosting the Olympics, in 1932 and 1984, are both considered to be monumental in Olympic history for bringing greater attention and economic success to the Games. Let’s go back to the first time Los Angeles hosted the Games, the 10th Olympiad in 1932.
+        <div class="col-lg-6 content-card p-4">
+          <p class="lead">
+            The 2028 Summer Olympics will mark the third time that Los Angeles will play host to the Olympic Games, thereby making us the third city in the world to host three Olympic Games (after London and Paris)!
           </p>
           <p>
-            Starting in 1922, local real estate developer William May Garland led the effort of local business, government, and media leaders’ attempts to bring the Olympics to LA. In lobbying the International Olympic Committee (IOC), Garland boasted about the brand-new Olympic Stadium that he promised would be completed in time if Los Angeles was picked to host. The Stadium was completed in 1923 and soon became the home of both the USC and UCLA football teams, though UCLA eventually moved to the Rose Bowl in 1981. Today, the Olympic Stadium is known as the Los Angeles Memorial Coliseum, and in 2028 will become the first and only stadium to have hosted three Olympic Games.
+            LA's previous times hosting the Olympics, in 1932 and 1984, are both considered to be monumental in Olympic history for bringing greater attention and economic success to the Games. Let's go back to the first time Los Angeles hosted the Games, the 10th Olympiad in 1932.
+          </p>
+          <p>
+            Starting in 1922, local real estate developer William May Garland led the effort of local business, government, and media leaders' attempts to bring the Olympics to LA. In lobbying the International Olympic Committee (IOC), Garland boasted about the brand-new Olympic Stadium that he promised would be completed in time if Los Angeles was picked to host. The Stadium was completed in 1923 and soon became the home of both the USC and UCLA football teams, though UCLA eventually moved to the Rose Bowl in 1981. Today, the Olympic Stadium is known as the Los Angeles Memorial Coliseum, and in 2028 will become the first and only stadium to have hosted three Olympic Games.
           </p>
         </div>
       </div>
 
-      <!-- Row 2: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 2 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" alt="Olympic Stadium" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
-            After traveling to Rome in 1923, Garland finally secured the bid to host the 1932 Olympics. The organizers knew that they’d need more than just a place for athletes to compete, they would also require a place for them to live while they were in town. In fact, the high costs of travel and lodging (during the Great Depression, no less) led many countries to be hesitant to participate in the Games at all! But staunch in his commitment to bring the Games to LA, Garland made deals with hotels, railroads, and shipping lines to drastically cut the costs for visitors.
+            After traveling to Rome in 1923, Garland finally secured the bid to host the 1932 Olympics. The organizers knew that they'd need more than just a place for athletes to compete, they would also require a place for them to live while they were in town. In fact, the high costs of travel and lodging (during the Great Depression, no less) led many countries to be hesitant to participate in the Games at all! But staunch in his commitment to bring the Games to LA, Garland made deals with hotels, railroads, and shipping lines to drastically cut the costs for visitors.
           </p>
           <p>
             The organizers created the first-ever Olympic Village in an undeveloped area of Baldwin Hills, building temporary housing centers for all the male athletes and their staff to stay at a heavily discounted rate of only $2 a day. The male athletes stayed in one of the five hundred 24x10 foot bungalows, and their trainers, staff, and even chefs from their home countries were invited to stay with them. Some people at the time thought that putting the rivals together would lead to conflict, but newspapers mostly reported on the camaraderie and cross-cultural connections between athletes. With the help of the discounted housing, 37 countries ultimately agreed to participate in the games, and over 1,800 male athletes and staff stayed in the Olympic Village, enjoying the amphitheater, saunas, recreation rooms, and dining rooms created for their stay.
           </p>
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" alt="Olympic Stadium" />
-        </div>
       </div>
 
-      <!-- Row 3: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" alt="Olympic Village" />
+      <!-- Row 3 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" alt="Olympic Village" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
-            The 1932 Games featured more women’s competitions than any previous event, but the organizers felt it would be improper for the women to stay with the men in the village. Instead, the 126 women athletes were put up at the Chapman Park Hotel, which was located in today’s Koreatown. The Olympic Organizing Committee subsidized their stay so that the athletes and their staff would still only need to pay the $2-a-night fee required of the men in the Village, and the women had exclusive access to all the hotel’s amenities.
+            The 1932 Games featured more women's competitions than any previous event, but the organizers felt it would be improper for the women to stay with the men in the village. Instead, the 126 women athletes were put up at the Chapman Park Hotel, which was located in today's Koreatown. The Olympic Organizing Committee subsidized their stay so that the athletes and their staff would still only need to pay the $2-a-night fee required of the men in the Village, and the women had exclusive access to all the hotel's amenities.
           </p>
           <p>
-            Even after the Depression ended and the need for dirt cheap lodging disappeared, Olympic Villages have remained a traditional part of the Games. Unfortunately, L.A.’s bungalows were quickly dismantled and sold off, and none remain in Baldwin Hills. Many were used as ready-made homes for buyers throughout California, and some went further out across the United States and even to Germany, Japan, and South Africa.
+            Even after the Depression ended and the need for dirt cheap lodging disappeared, Olympic Villages have remained a traditional part of the Games. Unfortunately, L.A.'s bungalows were quickly dismantled and sold off, and none remain in Baldwin Hills. Many were used as ready-made homes for buyers throughout California, and some went further out across the United States and even to Germany, Japan, and South Africa.
           </p>
         </div>
       </div>
 
-      <!-- Row 4: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
+      <!-- Row 4 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Olympic-Village-Housing-credited_sd93_4.png" alt="Olympic Village Housing" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
           <p>
-            With stadiums built and athletes secured, Garland and the local organizing committee turned their attention to their main motivation for hosting the Games: advertising the city of Los Angeles! Banners were draped throughout the city, banquets were held for athletes and dignitaries, 10th Street was renamed Olympic Boulevard, and the city hired 400 workers to plant 40,000 palm trees throughout the city. These plants, which are not native to Southern California, were already a popular way to advertise LA as a “sub-tropical” climate in a modern Western metropolis, and this massive planting effort made the palm tree an icon of LA’s image.
+            With stadiums built and athletes secured, Garland and the local organizing committee turned their attention to their main motivation for hosting the Games: advertising the city of Los Angeles! Banners were draped throughout the city, banquets were held for athletes and dignitaries, 10th Street was renamed Olympic Boulevard, and the city hired 400 workers to plant 40,000 palm trees throughout the city. These plants, which are not native to Southern California, were already a popular way to advertise LA as a "sub-tropical" climate in a modern Western metropolis, and this massive planting effort made the palm tree an icon of LA's image.
           </p>
           <p>
-            The local press positively reported on the 1932 Games, with the Los Angeles Times referring to them as “an unqualified success,” “the greatest in history,” and the harbinger of “the most amazing chapter in the Southland’s history.” The Times attributed the Games’ success to the inherent virtues of the people, culture, and landscape of Southern California, writing that Los Angeles was “an ideal location for all Olympic contests with the exception of those requiring snow.” The interest that film stars showed in the Olympics and their athletes was constantly covered throughout the Games. Hollywood actors Douglas Fairbanks and wife Mary Pickford were often seen at Olympic events, and even helped advertise the Games in a worldwide radio broadcast from both the Hollywood Bowl and the Olympic Stadium. Luminaries like Charlie Chaplin and Marlene Dietrich also attended.
-          </p>
-        </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Olympic-Village-Housing-credited_sd93_4.png" alt="Olympic Village Housing" />
-        </div>
-      </div>
-
-      <!-- Row 5: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-1932-Olympics-Promotion-credited_sd94_5.png" alt="1932 Olympics Promotion" />
-        </div>
-        <div class="story-text">
-          <p>
-            The Olympics were also very lucrative for some LA businesses. New York baker Paul Helms thought he had come to Southern California to retire, but he opened Helms Bakery in 1931 in Culver City, quickly getting enough acclaim that he was awarded a contract to supply bread to the Olympians. This contract brought a great deal of attention, and he maintained a sponsorship deal with the Olympics until 1952. Helms Bakery closed soon after Paul’s death in 1968, and the building remains a local historical landmark with its iconic art deco design.
-          </p>
-          <p>
-            After its success in 1932, Los Angeles officially bid to host the Games every year from 1940 until the city’s next selection in 1984. By 2001, LA began bidding once again, hoping for the 2012 Olympics, and eventually being awarded the 2028 Games. The announcement of another Olympics brings new and exciting updates to the city and surrounding areas to accommodate a modern Games, and we look forward to those changes and seeing the world for the 34th Olympiad!
+            The local press positively reported on the 1932 Games, with the Los Angeles Times referring to them as "an unqualified success," "the greatest in history," and the harbinger of "the most amazing chapter in the Southland's history." The Times attributed the Games' success to the inherent virtues of the people, culture, and landscape of Southern California, writing that Los Angeles was "an ideal location for all Olympic contests with the exception of those requiring snow." The interest that film stars showed in the Olympics and their athletes was constantly covered throughout the Games. Hollywood actors Douglas Fairbanks and wife Mary Pickford were often seen at Olympic events, and even helped advertise the Games in a worldwide radio broadcast from both the Hollywood Bowl and the Olympic Stadium. Luminaries like Charlie Chaplin and Marlene Dietrich also attended.
           </p>
         </div>
       </div>
-    </section>
 
-    <footer>
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>123 Main Street, Orange City, USA</p>
-        <p>Email: hennab@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Subscription -->
-      <div class="footer-section">
-        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <!-- Row 5 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/5-1932-Olympics-Promotion-credited_sd94_5.png" alt="1932 Olympics Promotion" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p>
+            The Olympics were also very lucrative for some LA businesses. New York baker Paul Helms thought he had come to Southern California to retire, but he opened Helms Bakery in 1931 in Culver City, quickly getting enough acclaim that he was awarded a contract to supply bread to the Olympians. This contract brought a great deal of attention, and he maintained a sponsorship deal with the Olympics until 1952. Helms Bakery closed soon after Paul's death in 1968, and the building remains a local historical landmark with its iconic art deco design.
+          </p>
+          <p>
+            After its success in 1932, Los Angeles officially bid to host the Games every year from 1940 until the city's next selection in 1984. By 2001, LA began bidding once again, hoping for the 2012 Olympics, and eventually being awarded the 2028 Games. The announcement of another Olympics brings new and exciting updates to the city and surrounding areas to accommodate a modern Games, and we look forward to those changes and seeing the world for the 34th Olympiad!
+          </p>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
-        </p>
+      <!-- Author Card -->
+      <div class="card mb-5 author-card text-white border-0 shadow">
+        <div class="row g-0">
+          <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-user-circle fa-5x text-light"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">About the Author</h5>
+              <p class="card-text">Chris F. is a historian specializing in Los Angeles sports history and urban development. He has written extensively about the impact of major events on the city's growth and identity.</p>
+              <p class="card-text"><small class="text-light">Last updated March 2023</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Stories -->
+      <div class="mb-5">
+        <h3 class="mb-4 pb-2 border-bottom border-light">Related Stories</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" class="card-img-top" alt="Related story 1">
+              <div class="card-body">
+                <h5 class="card-title">1984 Olympics</h5>
+                <p class="card-text">How Los Angeles transformed the modern Olympics with private funding.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" class="card-img-top" alt="Related story 2">
+              <div class="card-body">
+                <h5 class="card-title">LA Memorial Coliseum</h5>
+                <p class="card-text">The history of America's only stadium to host two Olympics (soon to be three).</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" class="card-img-top" alt="Related story 3">
+              <div class="card-body">
+                <h5 class="card-title">2028 Olympics Preview</h5>
+                <p class="card-text">What to expect from Los Angeles' third Olympic Games.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-      // Toggle Navbar on Hamburger Click
-      const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('navbar-glass');
         } else {
-          header.classList.remove("glassy");
+          navbar.classList.remove('navbar-glass');
         }
       });
     </script>

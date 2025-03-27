@@ -4,158 +4,355 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grand Park and the Arthur J. Will Memorial Fountain - LA Walking Tours</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #1a4b8c; /* Deep blue background */
+        color: #e0e0e0; /* Light gray text for readability */
+        font-family: 'Quattrocento', serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6,
+      .navbar-brand,
+      .hero-section h1,
+      .hero-section .lead,
+      .card-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      .navbar {
+        background-color: rgba(26, 75, 140, 0.9) !important;
+        backdrop-filter: blur(10px);
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-glass {
+        background-color: rgba(10, 40, 90, 0.85) !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #1a4b8c 0%, #0d2b5a 100%);
+        border-bottom: 3px solid #4a90e2;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.5rem;
+      }
+      
+      .content-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .img-border {
+        border: 3px solid #4a90e2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      .author-card {
+        background-color: rgba(10, 40, 90, 0.7);
+        border-left: 5px solid #4a90e2;
+      }
+      
+      .related-card {
+        background-color: rgba(26, 75, 140, 0.7);
+        transition: transform 0.3s ease;
+      }
+      
+      .related-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(26, 75, 140, 0.9);
+      }
+      
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .footer {
+        background: linear-gradient(135deg, #0d2b5a 0%, #081f3d 100%);
+      }
+      
+      .footer h5 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+      }
+      
+      .footer-link {
+        color: #a0c4ff !important;
+      }
+      
+      .footer-link:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+      
+      .story-meta {
+        color: #a0c4ff;
+        font-style: italic;
+      }
+      
+      .cta-highlight {
+        font-weight: bold;
+        color: #4a90e2;
+        font-size: 1.1rem;
+      }
+      
+      em {
+        font-style: italic;
+        color: #a0c4ff;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <a href="./index.html">
-        <img src="./Images/LA_walking.png" alt="logo"
-      /></a>
-      <!-- Hamburger Button -->
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
-      </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Images/LA_walking.png" alt="logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tourPage.html">Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/stories.html">Stories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white py-5 mb-5">
+      <div class="container py-5 mt-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold">Grand Park</h1>
+            <p class="lead mb-0">And the Arthur J. Will Memorial Fountain</p>
+            <p class="story-meta">By: Neel S. | Date: January 13, 2020</p>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="story-details">
-      <h1>Grand Park and the Arthur J. Will Memorial Fountain</h1>
-      <p class="story-meta">By: Neel S. | Date: January 13, 2020</p>
-
-      <!-- Row 1: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-1_sd1_1.png" alt="Grand Park Opening" />
+    <!-- Main Content -->
+    <main class="container mb-5">
+      <!-- Row 1 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-1_sd1_1.png" alt="Grand Park Opening" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
-            Grand Park opened in 2012 to much fanfare and excitement, especially for the Downtown community that had been wishing for a larger central civic green space after Pershing Square. Grand Park lies within the Civic Center neighborhood of Downtown Los Angeles, surrounded by courthouses, administration buildings, the Music Center, and City Hall. Since its opening, Grand Park has been home to community-wide events, the 4th of July celebration Block Party, and the largest New Year’s Eve celebration in the city! We look forward to more events as the years go by!
+            Grand Park opened in 2012 to much fanfare and excitement, especially for the Downtown community that had been wishing for a larger central civic green space after Pershing Square. Grand Park lies within the Civic Center neighborhood of Downtown Los Angeles, surrounded by courthouses, administration buildings, the Music Center, and City Hall. Since its opening, Grand Park has been home to community-wide events, the 4th of July celebration Block Party, and the largest New Year's Eve celebration in the city! We look forward to more events as the years go by!
           </p>
         </div>
       </div>
 
-      <!-- Row 2: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
-          <p>
-            One of the biggest central pieces of Grand Park is the Arthur J. Will Memorial Fountain, located between the Hill Street and Grand Avenue parcel. The beautiful fountain lights the evening with changing illuminations. As children play in the extremely shallow pond in the front, “walking on water,” kids can cast shadows in front of the night lights of the city’s fountain. This amazing fountain and its features appear to be something that was planned and built for the 2012 opening of Grand Park… but it was not. The fountain has been a mainstay since the 1960s!
-          </p>
+      <!-- Row 2 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/storie-dtail-img2-sd2-2_sd2_2.jpg" alt="Arthur J. Will Memorial Fountain" class="img-fluid rounded img-border">
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/storie-dtail-img2-sd2-2_sd2_2.jpg" alt="Arthur J. Will Memorial Fountain" />
+        <div class="col-lg-6 content-card p-4">
+          <p>
+            One of the biggest central pieces of Grand Park is the Arthur J. Will Memorial Fountain, located between the Hill Street and Grand Avenue parcel. The beautiful fountain lights the evening with changing illuminations. As children play in the extremely shallow pond in the front, "walking on water," kids can cast shadows in front of the night lights of the city's fountain. This amazing fountain and its features appear to be something that was planned and built for the 2012 opening of Grand Park... but it was not. The fountain has been a mainstay since the 1960s!
+          </p>
         </div>
       </div>
 
-      <!-- Row 3: Image on the left, text on the right -->
-      <div class="story-row">
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-3_sd9_3.png" alt="Civic Center Mall Renovation" />
+      <!-- Row 3 -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-3_sd9_3.png" alt="Civic Center Mall Renovation" class="img-fluid rounded img-border">
         </div>
-        <div class="story-text">
+        <div class="col-lg-6 content-card p-4">
           <p>
             Arthur J. Will was the Chief Administrative Officer for the City of Los Angeles, appointed by the County Board of Supervisors in 1951. He served this position until 1957. Mr. Will was known for streamlining and helping bring efficiency to government offices in order to work together for civic projects. He received a lot of praise for his work to bring cooperation among government offices. The Civic Center Mall fountain was named after him for his achievements.
           </p>
           <p>
-            Grand Park was a renovation of the previous Civic Center Mall. Previous plazas and parking lots between Grand Avenue and City Hall were remodeled, removed, and renovated. However, the Arthur J. Will Memorial Fountain continues to stand, albeit with some slight touch-up renovations, and remains a proud mainstay of Downtown’s Grand Park. The fountain continues to be a visual highlight for city residents and visitors and is best viewed after dusk when the multicolored lights highlight the flowing water. Make your plans to visit and walk the benches that surround the fountain like Julia Roberts did in <em>Pretty Woman</em> (1990) or have a dance around like Tom in <em>500 Days of Summer</em> (2009)!
+            Grand Park was a renovation of the previous Civic Center Mall. Previous plazas and parking lots between Grand Avenue and City Hall were remodeled, removed, and renovated. However, the Arthur J. Will Memorial Fountain continues to stand, albeit with some slight touch-up renovations, and remains a proud mainstay of Downtown's Grand Park. The fountain continues to be a visual highlight for city residents and visitors and is best viewed after dusk when the multicolored lights highlight the flowing water. Make your plans to visit and walk the benches that surround the fountain like Julia Roberts did in <em>Pretty Woman</em> (1990) or have a dance around like Tom in <em>500 Days of Summer</em> (2009)!
           </p>
         </div>
       </div>
 
-      <!-- Row 4: Text on the left, image on the right -->
-      <div class="story-row reverse">
-        <div class="story-text">
-          <p>
+      <!-- Row 4 -->
+      <div class="row g-5 mb-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-3_sd9_3.png" alt="Grand Park Fountain at Night" class="img-fluid rounded img-border">
+        </div>
+        <div class="col-lg-6 content-card p-4">
+          <p class="cta-highlight">
             Join our LA's Beginnings tour to see the gorgeous fountain. In December, check out Holiday Lights to see it glowing at night!
           </p>
         </div>
-        <div class="story-image">
-          <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/Grand-Park-Fountain-3_sd9_3.png" alt="Grand Park Fountain at Night" />
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/tourPage.html">Tours</a></li>
-          <li><a href="/stories.html">Stories</a></li>
-        </ul>
       </div>
 
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>123 Main Street, Orange City, USA</p>
-        <p>Email: hennab@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Subscription -->
-      <div class="footer-section">
-        <h3>Subscribe to Our LOS ANGELES Walking Tours</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <!-- Author Card -->
+      <div class="card mb-5 author-card text-white border-0 shadow">
+        <div class="row g-0">
+          <div class="col-md-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-user-circle fa-5x text-light"></i>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">About the Author</h5>
+              <p class="card-text">Neel S. is a public spaces historian who has documented the transformation of Los Angeles' civic areas for over 15 years.</p>
+              <p class="card-text"><small class="text-light">Last updated January 2020</small></p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 All Rights Reserved. | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
-        </p>
+      <!-- Related Stories -->
+      <div class="mb-5">
+        <h3 class="mb-4 pb-2 border-bottom border-light">Related Stories</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/1-1932-Opening-Ceremonies-credited_sd90_1.png" class="card-img-top" alt="Related story 1">
+              <div class="card-body">
+                <h5 class="card-title">LA's Civic Center</h5>
+                <p class="card-text">The evolution of Downtown's government district.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/2-Olympic-Stadium-credited_sd91_2.png" class="card-img-top" alt="Related story 2">
+              <div class="card-body">
+                <h5 class="card-title">Pershing Square</h5>
+                <p class="card-text">The history of LA's first public park.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 related-card text-white border-0">
+              <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/3-Olympic-Village-credited_sd92_3.png" class="card-img-top" alt="Related story 3">
+              <div class="card-body">
+                <h5 class="card-title">Movie Locations Tour</h5>
+                <p class="card-text">See where famous films were shot in Downtown LA.</p>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <a href="#" class="btn btn-outline-light">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
+              <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
+              <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
+              <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
+              <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
+              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
+              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-md-3 mb-4">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4">
+            <h5>Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-4 mt-4">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
-   <script>
-      // Toggle Navbar on Hamburger Click
-      const hamburger = document.querySelector(".hamburger");
-      const navbar = document.querySelector(".navbar");
-
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-
-      // Add Glassy Effect on Scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-
-        // Add the 'glassy' class if scrolled more than 100px, otherwise remove it
-        if (scrollPosition > 100) {
-          header.classList.add("glassy");
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Add glassy effect on scroll
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('navbar-glass');
         } else {
-          header.classList.remove("glassy");
+          navbar.classList.remove('navbar-glass');
         }
       });
     </script>
