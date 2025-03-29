@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wilshire Center & Koreatown Tour - LA Walking Tours</title>
+    <meta name="description" content="Explore Wilshire Center & Koreatown with LA Walking Tours. Discover Hollywood's Golden Age history and Korean heritage on our guided walking tour. Book your experience today.">
+    <title>Wilshire Center & Koreatown Tour - LA Walking Tours | Hollywood & Korean Heritage</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +19,7 @@
         background-color: #1a4b8c;
         color: #e0e0e0;
         font-family: 'Quattrocento', serif;
+        padding-top: 70px; /* For fixed navbar */
       }
       
       h1, h2, h3, h4, h5, h6,
@@ -34,6 +36,7 @@
         background-color: rgba(26, 75, 140, 0.9) !important;
         backdrop-filter: blur(10px);
         font-family: 'Oswald', sans-serif;
+        transition: all 0.3s ease;
       }
       
       .navbar-glass {
@@ -41,12 +44,21 @@
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
       }
       
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover,
+      .nav-link.active {
+        color: white;
+      }
+      
       .tour-hero {
         background: linear-gradient(135deg, #1a4b8c 0%, #0d2b5a 100%);
         border-bottom: 3px solid #4a90e2;
         padding: 3rem 0;
         margin-bottom: 2rem;
-        margin-top: 3rem;
       }
       
       .tour-card {
@@ -56,11 +68,17 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         overflow: hidden;
         margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .tour-card:hover {
+        transform: translateY(-5px);
       }
       
       .tour-image {
         width: 100%;
-        height: auto;
+        height: 100%;
+        min-height: 300px;
         object-fit: cover;
       }
       
@@ -81,18 +99,22 @@
         font-weight: 600;
         padding: 0.75rem 1.5rem;
         margin-top: 1rem;
+        border: none;
+        transition: all 0.3s ease;
       }
       
       .btn-booking:hover {
         background-color: #3a7bc8;
         color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
       
       .footer {
         background: linear-gradient(135deg, #0d2b5a 0%, #081f3d 100%);
       }
       
-      .footer h5 {
+      .footer h3 {
         font-family: 'Oswald', sans-serif;
         font-weight: 500;
       }
@@ -167,6 +189,39 @@
       .tour-options {
         margin-bottom: 1.5rem;
       }
+      
+      .hollywood-icon {
+        color: #FFD700;
+        margin-right: 10px;
+      }
+      
+      .highlight-box {
+        background-color: rgba(255, 215, 0, 0.1);
+        border-left: 4px solid #FFD700;
+        padding: 1rem;
+        margin: 1.5rem 0;
+      }
+      
+      /* Accessibility improvements */
+      a:focus {
+        outline: 2px solid #FFD700;
+        outline-offset: 2px;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .tour-hero {
+          padding: 2rem 0;
+        }
+        
+        .tour-card {
+          flex-direction: column;
+        }
+        
+        .tour-image {
+          height: 250px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -174,7 +229,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="./index.html">
-          <img src="./Images/LA_walking.webp" alt="logo" height="50">
+          <img src="./Images/LA_walking.webp" alt="LA Walking Tours Logo" height="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -188,12 +243,14 @@
               <a class="nav-link" href="/calendar.html">Calendar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/tourPage.html">Tours</a>
+              <a class="nav-link active" aria-current="page" href="/tourPage.html">Tours</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/stories.html">Stories</a>
             </li>
-             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -219,16 +276,17 @@
           <div class="tour-card">
             <div class="row g-0">
               <div class="col-md-6">
-                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Wilshire-Colonnade_dh14_4.jpg" alt="Wilshire Center & Koreatown Tour" class="tour-image">
+                <img src="https://www.lawalkingtours.com/sysimgdocs/rszimages/4-Wilshire-Colonnade_dh14_4.jpg" alt="Wilshire Center historic architecture with colonnade" class="tour-image">
               </div>
               <div class="col-md-6">
                 <div class="tour-text">
                   <p>
                     In the early 1900s, Wilshire Center was the glittering hub of Hollywood's Golden Age social life and the new commercial and business heart of the City. Towards the end of the century, this section of Mid-Wilshire became the home of the largest Korean population in the United States. We'll visit iconic LA landmarks and remember our historical lost beauties on this marveling adventure through Koreatown!
                   </p>
-                  <p class="fw-bold">
-                    <i class="fas fa-info-circle me-2"></i>Note: This tour can be hosted as a live walking tour or as a virtual experience.
-                  </p>
+                  <div class="highlight-box">
+                    <i class="fas fa-info-circle hollywood-icon" aria-hidden="true"></i>
+                    <strong>Note:</strong> This tour can be hosted as a live walking tour or as a virtual experience.
+                  </div>
                 </div>
               </div>
             </div>
@@ -241,42 +299,46 @@
         <!-- Upcoming Dates -->
         <div class="col-md-6">
           <div class="info-section h-100">
-            <h2>Upcoming Dates</h2>
+            <h2><i class="far fa-calendar-alt me-2" aria-hidden="true"></i> Upcoming Dates</h2>
             <ul class="list-unstyled">
-              <li>10:30 AM - Friday, April 4th</li>
-              <li>10:30 AM - Saturday, April 5th</li>
-              <li>10:30 AM - Friday, April 11th</li>
+              <li><i class="far fa-calendar-alt me-2" aria-hidden="true"></i> 10:30 AM - Friday, April 4th</li>
+              <li><i class="far fa-calendar-alt me-2" aria-hidden="true"></i> 10:30 AM - Saturday, April 5th</li>
+              <li><i class="far fa-calendar-alt me-2" aria-hidden="true"></i> 10:30 AM - Friday, April 11th</li>
             </ul>
-            <a href="#" class="btn btn-booking">Purchase Tickets</a>
+            <a href="/calendar.html" class="btn btn-booking" aria-label="Purchase tickets for Wilshire Center & Koreatown tour">Purchase Tickets</a>
           </div>
         </div>
         
         <!-- Booking Information -->
         <div class="col-md-6">
           <div class="info-section h-100">
-            <h2>Booking Information</h2>
+            <h2><i class="fas fa-ticket-alt me-2" aria-hidden="true"></i> Booking Information</h2>
             <p>
               All tours require advanced ticket purchases. Please use the "Purchase Tickets" option below when making your booking. Service fees are applied at the time of checkout.
             </p>
+            <div class="mt-3">
+              <i class="fas fa-exclamation-circle me-2" aria-hidden="true"></i>
+              <small>Limited to 15 participants per tour for optimal experience</small>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Tour Information -->
       <div class="info-section mb-4">
-        <h2>Tour Information</h2>
+        <h2><i class="fas fa-map-marked-alt me-2" aria-hidden="true"></i> Tour Information</h2>
         <ul class="list-unstyled">
-          <li><strong>Starting Point:</strong> Coffee Bean & Tea Leaf, within the Wilshire / Vermont Metro station courtyard</li>
-          <li><strong>Starting Address:</strong> 3183 Wilshire Boulevard, Los Angeles, CA 90010</li>
-          <li><strong>Distance:</strong> 1.7 miles</li>
-          <li><strong>Duration:</strong> 2 hours</li>
-          <li><strong>Ending Location:</strong> Wilshire / Western Metro station (3775 Wilshire Boulevard, 90010)</li>
+          <li><i class="fas fa-map-pin me-2" aria-hidden="true"></i> <strong>Starting Point:</strong> Coffee Bean & Tea Leaf, within the Wilshire / Vermont Metro station courtyard</li>
+          <li><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> <strong>Starting Address:</strong> 3183 Wilshire Boulevard, Los Angeles, CA 90010</li>
+          <li><i class="fas fa-route me-2" aria-hidden="true"></i> <strong>Distance:</strong> 1.7 miles</li>
+          <li><i class="fas fa-clock me-2" aria-hidden="true"></i> <strong>Duration:</strong> 2 hours</li>
+          <li><i class="fas fa-flag-checkered me-2" aria-hidden="true"></i> <strong>Ending Location:</strong> Wilshire / Western Metro station (3775 Wilshire Boulevard, 90010)</li>
         </ul>
       </div>
 
       <!-- Tour Options -->
       <div class="info-section mb-4">
-        <h2>Tour Options</h2>
+        <h2><i class="fas fa-cogs me-2" aria-hidden="true"></i> Tour Options</h2>
         <div class="tour-options">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="tourType" id="walkingTour" value="walking" checked>
@@ -290,11 +352,87 @@
               Virtual Experience ($20 per connection)
             </label>
           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tourType" id="privateTour" value="private">
+            <label class="form-check-label" for="privateTour">
+              Private Group Tour (up to 15 people, $350)
+            </label>
+          </div>
         </div>
       </div>
 
- 
+      <!-- Cultural Highlights -->
+      <div class="info-section mb-4">
+        <h2><i class="fas fa-landmark me-2" aria-hidden="true"></i> Cultural Highlights</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fas fa-theater-masks hollywood-icon" aria-hidden="true"></i> Hollywood Golden Age history</li>
+              <li><i class="fas fa-building hollywood-icon" aria-hidden="true"></i> Art Deco architecture</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fas fa-utensils hollywood-icon" aria-hidden="true"></i> Korean culinary traditions</li>
+              <li><i class="fas fa-monument hollywood-icon" aria-hidden="true"></i> Korean-American cultural landmarks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+      <!-- Pricing Table -->
+      <div class="info-section mb-4">
+        <h2><i class="fas fa-tags me-2" aria-hidden="true"></i> Pricing</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ticket Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Adult (18+)</td>
+              <td>$30.00</td>
+            </tr>
+            <tr>
+              <td>Senior (65+)</td>
+              <td>$25.00</td>
+            </tr>
+            <tr>
+              <td>Student (with ID)</td>
+              <td>$22.00</td>
+            </tr>
+            <tr>
+              <td>Child (6-17)</td>
+              <td>$15.00</td>
+            </tr>
+            <tr>
+              <td>Private Group (up to 15)</td>
+              <td>$350.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- What to Bring -->
+      <div class="info-section">
+        <h2><i class="fas fa-suitcase me-2" aria-hidden="true"></i> What to Bring</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fas fa-check-circle me-2 text-success" aria-hidden="true"></i> Comfortable walking shoes</li>
+              <li><i class="fas fa-check-circle me-2 text-success" aria-hidden="true"></i> Weather-appropriate clothing</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fas fa-check-circle me-2 text-success" aria-hidden="true"></i> Bottled water</li>
+              <li><i class="fas fa-check-circle me-2 text-success" aria-hidden="true"></i> Camera (photography allowed in most areas)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -303,47 +441,48 @@
         <div class="row">
           <!-- Quick Links -->
           <div class="col-md-3 mb-4">
-            <h5>Quick Links</h5>
+            <h3>Quick Links</h3>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="/index.html" class="nav-link p-0 footer-link">Home</a></li>
               <li class="nav-item mb-2"><a href="/about.html" class="nav-link p-0 footer-link">About Us</a></li>
               <li class="nav-item mb-2"><a href="/calendar.html" class="nav-link p-0 footer-link">Calendar</a></li>
               <li class="nav-item mb-2"><a href="/tourPage.html" class="nav-link p-0 footer-link">Tours</a></li>
               <li class="nav-item mb-2"><a href="/stories.html" class="nav-link p-0 footer-link">Stories</a></li>
-               <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 footer-link">Contact</a></li>
+              <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 footer-link">Contact</a></li>
             </ul>
           </div>
 
           <!-- Contact Information -->
           <div class="col-md-3 mb-4">
-            <h5>Contact Us</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, Orange City, USA</li>
-              <li class="nav-item mb-2"><i class="fas fa-envelope me-2"></i> hennab@gmail.com</li>
-              <li class="nav-item mb-2"><i class="fas fa-phone me-2"></i> +123 456 7890</li>
-            </ul>
+            <h3>Contact Us</h3>
+            <address class="nav flex-column">
+              <div class="nav-item mb-2"><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> 123 Main Street, Los Angeles, CA 90012</div>
+              <div class="nav-item mb-2"><i class="fas fa-envelope me-2" aria-hidden="true"></i> info@lawalkingtours.com</div>
+              <div class="nav-item mb-2"><i class="fas fa-phone me-2" aria-hidden="true"></i> (213) 555-1234</div>
+            </address>
           </div>
 
           <!-- Newsletter Subscription -->
           <div class="col-md-3 mb-4">
-            <h5>Subscribe to Our Newsletter</h5>
-            <form>
+            <h3>Newsletter</h3>
+            <form class="newsletter-form">
               <div class="mb-3">
-                <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
+                <label for="newsletter-email" class="visually-hidden">Email address</label>
+                <input type="email" id="newsletter-email" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email" required>
               </div>
-              <button type="submit" class="btn btn-primary">Subscribe</button>
+              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
             </form>
           </div>
 
           <!-- Social Media -->
           <div class="col-md-3 mb-4">
-            <h5>Follow Us</h5>
+            <h3>Follow Us</h3>
             <div class="d-flex gap-3">
-              <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://facebook.com/lawalkingtours" class="text-white fs-4" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/lawalkingtours" class="text-white fs-4" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://instagram.com/lawalkingtours" class="text-white fs-4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://linkedin.com/company/lawalkingtours" class="text-white fs-4" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://youtube.com/lawalkingtours" class="text-white fs-4" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
@@ -351,12 +490,12 @@
         <div class="border-top border-secondary pt-4 mt-4">
           <div class="row">
             <div class="col-md-6 text-center text-md-start">
-              <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+              <p class="mb-0">&copy; 2025 LA Walking Tours. All Rights Reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
               <ul class="nav justify-content-center justify-content-md-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Privacy Policy</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 footer-link">Terms of Service</a></li>
+                <li class="nav-item"><a href="/privacy.html" class="nav-link px-2 footer-link">Privacy Policy</a></li>
+                <li class="nav-item"><a href="/terms.html" class="nav-link px-2 footer-link">Terms of Service</a></li>
               </ul>
             </div>
           </div>
@@ -365,17 +504,30 @@
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
     <script>
       // Add glassy effect on scroll
-      window.addEventListener('scroll', function() {
+      document.addEventListener('DOMContentLoaded', function() {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-          navbar.classList.add('navbar-glass');
-        } else {
-          navbar.classList.remove('navbar-glass');
-        }
+        
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            navbar.classList.add('navbar-glass');
+          } else {
+            navbar.classList.remove('navbar-glass');
+          }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
       });
     </script>
   </body>
